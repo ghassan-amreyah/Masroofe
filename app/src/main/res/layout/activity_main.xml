@@ -4,15 +4,401 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@color/bright_gray"
     tools:context=".MainActivity">
 
-    <TextView
-        android:layout_width="wrap_content"
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Hello World!"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:gravity="top"
+        android:orientation="vertical"
+        android:textAlignment="gravity"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        app:layout_constraintTop_toTopOf="parent"
+        android:padding="10dp">
+
+        <TextView
+            android:id="@+id/textView7"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="38dp"
+            android:layout_marginBottom="12dp"
+            android:gravity="center"
+            android:paddingTop="30dp"
+            android:text="تذكر، المالُ رَئيسٌ سَيِّء، لكِنَّهُ خادِمٌ مُمتاز.."
+            android:textColor="@color/jacarta"
+            android:textSize="20dp"
+            android:textStyle="bold" />
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="500px">
+
+            <ImageView
+                android:id="@+id/imageView2"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:layout_marginStart="3dp"
+                android:layout_marginTop="28dp"
+                android:layout_marginEnd="3dp"
+                android:layout_marginBottom="26dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/textView13"
+                app:srcCompat="@drawable/main_drawable_top" />
+
+            <TextView
+                android:id="@+id/textView2"
+                android:layout_width="wrap_content"
+                android:layout_height="56dp"
+                android:layout_gravity="right|center"
+                android:layout_margin="35dp"
+                android:layout_marginStart="20dp"
+                android:layout_marginTop="14dp"
+                android:text="كامل الدخل هذا الشهر"
+                android:textColor="@color/head_filed_color"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView3"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:layout_marginStart="35dp"
+                android:layout_marginEnd="42dp"
+                android:layout_marginBottom="17dp"
+                android:text="المتبقي من الدخل"
+                android:textColor="@color/head_filed_color"
+                android:textStyle="bold" />
+
+            <TextView
+                android:id="@+id/textView4"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|bottom"
+                android:layout_margin="50dp"
+                android:layout_marginStart="13dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="monospace"
+                android:paddingTop="10dp"
+                android:text="0.0"
+                android:textColor="@color/bright_gray"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/fixedIncome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|bottom"
+                android:layout_margin="50dp"
+                android:layout_marginStart="22dp"
+                android:layout_marginBottom="4dp"
+                android:fontFamily="monospace"
+                android:text="0.0"
+                android:textColor="@color/bright_gray"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="center"
+                android:layout_marginBottom="26dp"
+                android:fontFamily="sans-serif-thin"
+                android:text="|"
+                android:textColor="@color/jacarta"
+                android:textSize="150sp" />
+
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="127dp">
+
+            <ImageView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                app:srcCompat="@drawable/light_silver_p" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|center"
+                android:layout_marginStart="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="19dp"
+                android:layout_marginBottom="16dp"
+                android:fontFamily="monospace"
+                android:text="0.0"
+                android:textColor="@color/head_filed_color"
+                android:textSize="48sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|center"
+                android:layout_marginEnd="34dp"
+                android:text="مجموع مدخرات الشهر الماضي"
+                android:textColor="@color/head_filed_color"
+                android:textSize="20sp"
+                android:textStyle="bold" />
+        </FrameLayout>
+
+        <FrameLayout
+            android:layout_width="match_parent"
+            android:layout_height="208dp">
+
+            <ImageView
+                android:layout_width="180dp"
+                android:layout_height="190dp"
+                android:layout_gravity="left|center"
+                android:layout_margin="10dp"
+                android:layout_weight="1"
+                app:srcCompat="@drawable/main_drawable" />
+
+            <TextView
+                android:layout_width="88dp"
+                android:layout_height="66dp"
+                android:layout_gravity="left|bottom"
+                android:layout_margin="50dp"
+                android:fontFamily="monospace"
+                android:text="0.0"
+                android:textColor="@color/bright_gray"
+                android:textSize="48sp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="left|top"
+                android:layout_margin="30dp"
+                android:paddingTop="10dp"
+                android:text="مجموع دخلك الإضافي"
+                android:textColor="@color/bright_gray"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <ImageView
+                android:layout_width="180dp"
+                android:layout_height="190dp"
+                android:layout_gravity="right|center"
+                android:layout_margin="10dp"
+                app:srcCompat="@drawable/main_drawable" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_gravity="right|top"
+                android:layout_margin="19dp"
+                android:paddingTop="20dp"
+                android:text=" مجموع مصاريفك هذا الشهر"
+                android:textColor="@color/bright_gray"
+                android:textSize="16sp"
+                android:textStyle="bold" />
+
+            <TextView
+                android:layout_width="98dp"
+                android:layout_height="65dp"
+                android:layout_gravity="right|bottom"
+                android:layout_margin="50dp"
+                android:fontFamily="monospace"
+                android:text="0.0"
+                android:textColor="@color/bright_gray"
+                android:textSize="48sp" />
+
+
+        </FrameLayout>
+    </LinearLayout>
+
+    <androidx.coordinatorlayout.widget.CoordinatorLayout
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4"
+        app:layout_constraintVertical_bias="1.0">
+
+
+        <com.google.android.material.bottomappbar.BottomAppBar
+            android:id="@+id/app_bar"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:layout_gravity="bottom"
+            android:backgroundTint="@color/light_silver"
+            app:fabCradleMargin="8dp"
+            app:fabCradleRoundedCornerRadius="50dp"
+            app:fabCradleVerticalOffset="6dp"
+            app:layout_anchor="@+id/app_bar"
+            app:layout_anchorGravity="bottom|center">
+
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:gravity="center"
+                android:orientation="horizontal">
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="6dp"
+                    android:layout_weight="0.2"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgHome"
+                        android:layout_width="wrap_content"
+                        android:layout_height="34dp"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        app:srcCompat="@drawable/home" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="الرئيسية"
+                        android:textAlignment="center"
+                        android:textColor="@color/jacarta"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="6dp"
+                    android:layout_weight="0.2"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgCal"
+                        android:layout_width="100dp"
+                        android:layout_height="34dp"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        app:srcCompat="@drawable/calendar_masroofe" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="الأشهر السابقة"
+                        android:textAlignment="center"
+                        android:textColor="@color/jacarta"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="6dp"
+                    android:layout_weight="0.2"
+                    android:gravity="center|top"
+                    android:orientation="vertical"
+                    android:visibility="invisible">
+
+                    <ImageView
+                        android:layout_width="140dp"
+                        android:layout_height="40dp"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        app:srcCompat="@drawable/add_masroofe" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Add"
+                        android:textAlignment="center"
+                        android:textColor="@color/jacarta"
+                        android:textSize="12sp" />
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="6dp"
+                    android:layout_weight="0.2"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgGuide"
+                        android:layout_width="wrap_content"
+                        android:layout_height="34dp"
+                        android:layout_margin="4dp"
+                        android:textAlignment="center"
+                        app:srcCompat="@drawable/guide" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center"
+                        android:text="دليل المستخدم"
+                        android:textAlignment="center"
+                        android:textColor="@color/jacarta"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+
+                </LinearLayout>
+
+                <LinearLayout
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent"
+                    android:layout_margin="6dp"
+                    android:layout_weight="0.2"
+                    android:gravity="center|top"
+                    android:orientation="vertical">
+
+                    <ImageView
+                        android:id="@+id/imgMenu"
+                        android:layout_width="wrap_content"
+                        android:layout_height="30dp"
+                        android:layout_margin="6dp"
+                        android:textAlignment="center"
+                        app:srcCompat="@drawable/setting_icon" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="الإعدادات"
+                        android:textAlignment="center"
+                        android:textColor="@color/jacarta"
+                        android:textSize="12sp"
+                        android:textStyle="bold" />
+                </LinearLayout>
+
+            </LinearLayout>
+
+
+        </com.google.android.material.bottomappbar.BottomAppBar>
+
+        <com.google.android.material.floatingactionbutton.FloatingActionButton
+            android:id="@+id/floatingActionButton"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0.2"
+            android:clickable="true"
+            android:contentDescription="@string/appbar_scrolling_view_behavior"
+            android:foreground="@drawable/add_masroofe"
+            android:foregroundTint="@color/jacarta"
+            android:onClick="addOnClick"
+            app:backgroundTint="@color/vista_blue"
+            app:layout_anchor="@id/app_bar">
+
+        </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+
+    </androidx.coordinatorlayout.widget.CoordinatorLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>
