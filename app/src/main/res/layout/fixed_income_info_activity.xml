@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/constraintLayout"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/jacarta"
+    android:orientation="vertical"
+    tools:context=".FixedIncomeInfoActivity">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:background="@drawable/top_background"
+        android:orientation="vertical"
+        tools:ignore="MissingConstraints">
+
+        <TextView
+            android:id="@+id/nameOfUser"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingTop="80dp"
+            android:layout_marginEnd="15dp"
+            android:textColor="@color/jacarta"
+            android:textSize="30sp"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout">
+
+        <TextView
+            style="@style/textViews_fixed_style"
+            android:text="@string/complete_info_text"
+            android:textColor="@color/white"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="30dp"/>
+
+        <TextView
+            style="@style/label_feilds_style"
+            android:layout_gravity="right"
+            android:layout_marginTop="30dp"
+            android:text="@string/income_value"
+            android:textColor="@color/white" />
+
+        <EditText
+            android:id="@+id/incomeAmount"
+            style="@style/fields_style"
+            android:maxLines="1"
+            android:hint="@string/amount_of_income" />
+
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/addIncomeBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center"
+            android:layout_marginTop="53dp"
+            android:background="@drawable/btn_background"
+            android:text="@string/add_income"
+            android:textColor="@color/jacarta"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+    </LinearLayout>
+
+</LinearLayout>

@@ -1,3 +1,28 @@
 <resources>
     <string name="app_name">Masroofe</string>
+    <string name="titleNameInSplashActivity">MASROOFE</string>
+    <string name="mainTitleInLoginActivity">مرحبًا بك في تطبيق مصروفي</string>
+    <string name="noteInLoginActivity">حان الوقت لتعرف\n وين راتبك بطير</string>
+    <string name="emailTitle">اسم المستخدم أو البريد الإلكتروني</string>
+    <string name="passwordTitle">كلمة السر</string>
+    <string name="email">Email or Username</string>
+    <string name="password">Password</string>
+    <string name="forgetPass"><u>هل نسيت كلمة السر ؟</u></string>
+    <string name="loginBtnTitle">تسجيل الدخول</string>
+    <string name="createNewAccount">إنشاء حساب جديد</string>
+    <string name="createAccount">أنشِئ حسابك</string>
+    <string name="full_name">الاسم الكامل</string>
+    <string name="full_name_hint">Full Name</string>
+    <string name="birth_day">تاريخ الميلاد</string>
+    <string name="birthday_hint">Birthday</string>
+    <string name="email_hint">Email or Username</string>
+    <string name="repeatPassword">إعادة كتابة كلمة السر</string>
+    <string name="repeat_password_hint">Repeat New Password</string>
+    <string name="fixed_income_message">هل تمتلك دخلًا ثابتًا ؟\nاضغط التالي لتزويدنا ببعض المعلومات</string>
+    <string name="finishSignup">إنهاء</string>
+    <string name="nextSignup">التالي</string>
+    <string name="complete_info_text">من فضلك، أكمل المعلومات التالية:</string>
+    <string name="income_value">قيمة الدخل الشهري الثابت</string>
+    <string name="amount_of_income">Amount of income</string>
+    <string name="add_income">إضافة</string>
 </resources>
