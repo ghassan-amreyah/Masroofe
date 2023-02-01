@@ -12,5 +12,11 @@
         <!-- Status bar color. -->
         <item name="android:statusBarColor">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
+        <style name="Theme.Masroofe.NoActionBar">
+            <item name="windowActionBar">false</item>
+            <item name="windowNoTitle">true</item>
+        </style>
+        <style name="Theme.Masroofe.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+        <style name="Theme.Masroofe.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
     </style>
 </resources>

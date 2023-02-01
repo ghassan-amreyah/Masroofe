@@ -7,4 +7,13 @@
     <color name="teal_700">#FF018786</color>
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
+    <color name="bright_gray">#ECEAF6</color>
+    <color name="light_silver">#D9D6DB</color>
+    <color name="champagne">#F5E3D2</color>
+    <color name="jacarta">#362360</color>
+    <color name="rose_pink">#C35E9E</color>
+    <color name="vista_blue">#84A6D3</color>
+    <color name="alice_blue">#84A6D3</color>
+    <color name="head_filed_color">#2F3363</color>
+    <color name="place_holder_color">#a2a4b5</color>
 </resources>
