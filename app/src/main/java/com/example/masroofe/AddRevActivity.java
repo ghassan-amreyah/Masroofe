@@ -9,29 +9,38 @@ import android.widget.ImageView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class MainActivity extends AppCompatActivity {
-    private ImageView imgMonthsRecord, imgUserGuide, imgSetting;
+public class AddRevActivity extends AppCompatActivity {
+
+    private ImageView imgHomePage, imgMonthsRecord, imgUserGuide, imgSetting;
     private FloatingActionButton ParAddButton;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.add_rev_activity);
         getSupportActionBar().hide();
         setupParActions();
     }
 
     private void setupParActions() {
-
+        imgHomePage = findViewById(R.id.imgHomePage);
         imgMonthsRecord = findViewById(R.id.imgMonthsRecord);
         imgUserGuide = findViewById(R.id.imgUserGuide);
         imgSetting = findViewById(R.id.imgSetting);
         ParAddButton = findViewById(R.id.ParAddButton);
 
+        imgHomePage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddRevActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
         imgMonthsRecord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MonthsActivity.class);
+                Intent intent = new Intent(AddRevActivity.this, MonthsActivity.class);
                 startActivity(intent);
             }
         });
@@ -46,7 +55,7 @@ public class MainActivity extends AppCompatActivity {
         imgSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+                Intent intent = new Intent(AddRevActivity.this, SettingsActivity.class);
                 startActivity(intent);
             }
         });
@@ -54,10 +63,9 @@ public class MainActivity extends AppCompatActivity {
         ParAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, AddActivity.class);
+                Intent intent = new Intent(AddRevActivity.this, AddActivity.class);
                 startActivity(intent);
             }
         });
-
     }
 }

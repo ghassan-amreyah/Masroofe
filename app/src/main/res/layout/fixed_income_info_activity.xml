@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/constraintLayout"
@@ -21,8 +20,8 @@
             android:id="@+id/nameOfUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:paddingTop="80dp"
             android:layout_marginEnd="15dp"
+            android:paddingTop="80dp"
             android:textColor="@color/jacarta"
             android:textSize="30sp"
             android:textStyle="bold" />
@@ -37,14 +36,14 @@
 
         <TextView
             style="@style/textViews_fixed_style"
+            android:layout_marginTop="30dp"
             android:text="@string/complete_info_text"
             android:textColor="@color/white"
             android:textSize="20sp"
-            android:textStyle="bold"
-            android:layout_marginTop="30dp"/>
+            android:textStyle="bold" />
 
         <TextView
-            style="@style/label_feilds_style"
+            style="@style/label_fields_style"
             android:layout_gravity="right"
             android:layout_marginTop="30dp"
             android:text="@string/income_value"
@@ -53,8 +52,8 @@
         <EditText
             android:id="@+id/incomeAmount"
             style="@style/fields_style"
-            android:maxLines="1"
-            android:hint="@string/amount_of_income" />
+            android:hint="@string/amount_of_income"
+            android:maxLines="1" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/addIncomeBtn"
@@ -69,4 +68,166 @@
             android:textStyle="bold" />
     </LinearLayout>
 
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <androidx.coordinatorlayout.widget.CoordinatorLayout
+            android:id="@+id/coordinatorLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="110dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+
+
+            <com.google.android.material.bottomappbar.BottomAppBar
+                android:id="@+id/app_bar"
+                android:layout_width="wrap_content"
+                android:layout_height="70dp"
+                android:layout_gravity="bottom"
+                android:backgroundTint="@color/light_silver"
+                app:fabCradleMargin="10dp"
+                app:fabCradleRoundedCornerRadius="50dp"
+                app:fabCradleVerticalOffset="2dp"
+                app:layout_anchor="@+id/app_bar"
+                app:layout_anchorGravity="bottom|center">
+
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:gravity="center"
+                    android:orientation="horizontal">
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgHomePage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="34dp"
+                            android:layout_margin="4dp"
+                            android:textAlignment="center"
+                            app:srcCompat="@drawable/home" />
+
+                        <TextView
+                            android:id="@+id/txtHomePage"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/HomePage"
+                            android:textAlignment="center"
+                            android:textColor="@color/jacarta"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:gravity="center|top"
+                        android:orientation="vertical"
+                        android:paddingRight="70dp">
+
+                        <ImageView
+                            android:id="@+id/imgMonthsRecord"
+                            android:layout_width="70dp"
+                            android:layout_height="34dp"
+                            android:layout_margin="4dp"
+                            android:textAlignment="center"
+                            app:srcCompat="@drawable/calendar_masroofe" />
+
+                        <TextView
+                            android:id="@+id/txtMonthsRecord"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/MonthsRecord"
+                            android:textAlignment="center"
+                            android:textColor="@color/jacarta"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.1"
+                        android:gravity="center|top"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgUserGuide"
+                            android:layout_width="wrap_content"
+                            android:layout_height="34dp"
+                            android:layout_margin="4dp"
+                            android:textAlignment="center"
+                            app:srcCompat="@drawable/guide" />
+
+                        <TextView
+                            android:id="@+id/txtUserGuide"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center"
+                            android:text="@string/UserGuide"
+                            android:textAlignment="center"
+                            android:textColor="@color/jacarta"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="wrap_content"
+                        android:layout_height="match_parent"
+                        android:layout_weight="0.2"
+                        android:gravity="center|top"
+                        android:orientation="vertical">
+
+                        <ImageView
+                            android:id="@+id/imgSetting"
+                            android:layout_width="wrap_content"
+                            android:layout_height="30dp"
+                            android:layout_margin="6dp"
+                            android:textAlignment="center"
+                            app:srcCompat="@drawable/setting_icon" />
+
+                        <TextView
+                            android:id="@+id/txtSetting"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:text="@string/Settings"
+                            android:textAlignment="center"
+                            android:textColor="@color/jacarta"
+                            android:textSize="12sp"
+                            android:textStyle="bold" />
+                    </LinearLayout>
+
+                </LinearLayout>
+
+
+            </com.google.android.material.bottomappbar.BottomAppBar>
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/ParAddButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:contentDescription="@string/appbar_scrolling_view_behavior"
+                android:foreground="@drawable/add_masroofe"
+                android:foregroundTint="@color/jacarta"
+                app:backgroundTint="@color/vista_blue"
+                app:layout_anchor="@id/app_bar">
+
+            </com.google.android.material.floatingactionbutton.FloatingActionButton>
+
+
+        </androidx.coordinatorlayout.widget.CoordinatorLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
 </LinearLayout>

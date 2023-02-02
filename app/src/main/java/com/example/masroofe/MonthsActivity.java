@@ -9,29 +9,31 @@ import android.widget.ImageView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-public class MainActivity extends AppCompatActivity {
-    private ImageView imgMonthsRecord, imgUserGuide, imgSetting;
+
+public class MonthsActivity extends AppCompatActivity {
+
+    private ImageView imgHomePage, imgUserGuide, imgSetting;
     private FloatingActionButton ParAddButton;
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.months_activity);
         getSupportActionBar().hide();
         setupParActions();
     }
 
     private void setupParActions() {
-
-        imgMonthsRecord = findViewById(R.id.imgMonthsRecord);
+        imgHomePage = findViewById(R.id.imgHomePage);
         imgUserGuide = findViewById(R.id.imgUserGuide);
         imgSetting = findViewById(R.id.imgSetting);
         ParAddButton = findViewById(R.id.ParAddButton);
 
-        imgMonthsRecord.setOnClickListener(new View.OnClickListener() {
+        imgHomePage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, MonthsActivity.class);
+                Intent intent = new Intent(MonthsActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -46,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
         imgSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, SettingsActivity.class);
+                Intent intent = new Intent(MonthsActivity.this, SettingsActivity.class);
                 startActivity(intent);
             }
         });
@@ -54,10 +56,9 @@ public class MainActivity extends AppCompatActivity {
         ParAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(MainActivity.this, AddActivity.class);
+                Intent intent = new Intent(MonthsActivity.this, AddActivity.class);
                 startActivity(intent);
             }
         });
-
     }
 }

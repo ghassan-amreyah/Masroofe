@@ -49,8 +49,7 @@ public class SplashActivity extends AppCompatActivity {
     }
 
     //Build Animation
-    private void buildAnimation()
-    {
+    private void buildAnimation() {
         Handler handler = new Handler();
 
         handler.postDelayed(new Runnable() {

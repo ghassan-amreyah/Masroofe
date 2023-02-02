@@ -46,33 +46,30 @@
     <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:orientation="vertical"
         android:layout_marginTop="20dp"
-        android:gravity="center">
+        android:gravity="center"
+        android:orientation="vertical">
 
         <TextView
-            android:text="@string/emailTitle"
-            style="@style/label_feilds_style"
-            />
+            style="@style/label_fields_style"
+            android:text="@string/emailTitle" />
 
         <EditText
             android:id="@+id/email"
-            android:inputType="textPersonName"
             style="@style/fields_style"
             android:hint="@string/email"
+            android:inputType="textPersonName"
             tools:ignore="TextFields" />
 
         <TextView
-            android:text="@string/passwordTitle"
-            style="@style/label_feilds_style"
-            />
+            style="@style/label_fields_style"
+            android:text="@string/passwordTitle" />
 
         <EditText
             android:id="@+id/password"
-            android:inputType="textPassword"
-            android:hint="@string/password"
             style="@style/fields_style"
-            />
+            android:hint="@string/password"
+            android:inputType="textPassword" />
 
         <TextView
             android:id="@+id/forgetPass"
@@ -81,23 +78,22 @@
             android:layout_marginStart="32dp"
             android:layout_marginTop="8dp"
             android:layout_marginEnd="32dp"
-            android:textDirection="firstStrong"
             android:text="@string/forgetPass"
             android:textAlignment="textStart"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            android:textDirection="firstStrong" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/loginBtn"
-            android:text="@string/loginBtnTitle"
+            style="@style/buttons_login_style"
             android:background="@drawable/btn_background"
-            style="@style/btns_login_style" />
+            android:text="@string/loginBtnTitle" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/signUpBtnInLoginActivity"
+            style="@style/buttons_login_style"
             android:background="@drawable/btnsignup_background"
-            android:text="@string/createNewAccount"
-            style="@style/btns_login_style"
-            />
+            android:text="@string/createNewAccount" />
     </LinearLayout>
 
 </LinearLayout>

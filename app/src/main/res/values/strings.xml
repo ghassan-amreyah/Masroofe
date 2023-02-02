@@ -25,4 +25,61 @@
     <string name="income_value">قيمة الدخل الشهري الثابت</string>
     <string name="amount_of_income">Amount of income</string>
     <string name="add_income">إضافة</string>
+    <string name="EditUserInformation">تعديل المعلومات الشخصية</string>
+    <string name="RefactorPassword">تعديل كلمة السر</string>
+    <string name="HomePage">الرئيسية</string>
+    <string name="MonthsRecord">الأشهر السابقة</string>
+    <string name="add">Add</string>
+    <string name="UserGuide">دليل المستخدم</string>
+    <string name="Settings">الإعدادات</string>
+    <string name="updateInformation">تحديث المعلومات</string>
+    <string name="updatePassword">تحديث كلمة السر</string>
+    <string name="currentPassword">كلمة السر الحالية</string>
+    <string name="currentPasswordHint">Current Password</string>
+    <string name="newPassword">كلمة السر الجديدة</string>
+    <string name="newPasswordHint">New Password</string>
+    <string name="repeatNewPassword">إعادة كتابة كلمة السر الجديدة</string>
+    <string name="repeatNewPasswordHint">Repeat New Password</string>
+    <string name="ChooseMonthAndYear">اختر السنة والشهر لإظهار المصاريف</string>
+    <string name="search">بحث</string>
+    <string name="quotation">تذكر، المالُ رَئيسٌ سَيِّء، لكِنَّهُ خادِمٌ مُمتاز...</string>
+    <string name="income_during_the_month">كامل الدخل خلال الشهر</string>
+    <string name="remainder_of_the_income">المتبقي من الدخل</string>
+    <string name="your_extra_income">مجموع دخلك الإضافي</string>
+    <string name="monthly_expenses">مجموع مصاريفك لهذا الشهر</string>
+    <string name="last_month_expenses">مجموع مدخرات الشهر الماضي</string>
+    <string name="month">الشهر</string>
+    <string name="year">السنة</string>
+
+    <string-array name="type_incomes">
+        <item>يومي</item>
+        <item>أسبوعي</item>
+        <item>شهري</item>
+    </string-array>
+    <string-array name="account_type">
+        <item>مصروف</item>
+        <item>إيراد / دخل</item>
+    </string-array>
+    <string-array name="years">
+        <item>2020</item>
+        <item>2021</item>
+        <item>2022</item>
+        <item>2023</item>
+        <item>2024</item>
+        <item>2025</item>
+    </string-array>
+    <string-array name="months">
+        <item>1</item>
+        <item>2</item>
+        <item>3</item>
+        <item>4</item>
+        <item>5</item>
+        <item>6</item>
+        <item>7</item>
+        <item>8</item>
+        <item>9</item>
+        <item>10</item>
+        <item>11</item>
+        <item>12</item>s
+    </string-array>
 </resources>
