@@ -21,15 +21,30 @@ public class UpdateUserPassword extends AppCompatActivity {
     private ImageView imgHomePage, imgMonthsRecord, imgUserGuide, imgSetting;
     private FloatingActionButton ParAddButton;
 
+    private SharedPreferences prefs;
+    private SharedPreferences.Editor editor;
+    public static final String LOGIN = "LOGIN";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.update_user_password_activity);
         getSupportActionBar().hide();
+        checkUserLogin();
         setupParActions();
         setupReference();
         setUp();
+    }
+
+    private void checkUserLogin() {
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        editor = prefs.edit();
+
+        String login = prefs.getString(LOGIN, "false");
+        if (login.equalsIgnoreCase("false")){
+            Intent intent = new Intent(UpdateUserPassword.this, LoginActivity.class);
+            startActivity(intent);
+        }
     }
 
     private void setupParActions() {

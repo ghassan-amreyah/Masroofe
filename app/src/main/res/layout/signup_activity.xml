@@ -57,25 +57,24 @@
 
             <TextView
                 style="@style/label_fields_style"
-                android:text="@string/birth_day" />
+                android:text="@string/usernameTitle" />
 
             <EditText
-                android:id="@+id/birthDay"
+                android:id="@+id/username"
                 style="@style/fields_style"
-                android:hint="@string/birthday_hint"
+                android:hint="@string/username_hint"
                 android:inputType="textPersonName"
                 android:maxLines="1" />
-
 
             <TextView
                 style="@style/label_fields_style"
                 android:text="@string/emailTitle" />
 
             <EditText
-                android:id="@+id/emailSignup"
+                android:id="@+id/email"
                 style="@style/fields_style"
                 android:hint="@string/email_hint"
-                android:inputType="textPersonName"
+                android:inputType="textEmailAddress"
                 android:maxLines="1" />
 
             <TextView

@@ -3,7 +3,9 @@ package com.example.masroofe;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
@@ -22,18 +24,30 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
     private TextView nameOfUser;
     private EditText incomeAmount;
 
+    private SharedPreferences prefs;
+    private SharedPreferences.Editor editor;
+    public static final String LOGIN = "LOGIN";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fixed_income_info_activity);
         getSupportActionBar().hide();
+        checkUserLogin();
         setupParActions();
-
         //References
         setupReference();
         addIcomeSeutp();
-        getSupportActionBar().hide();
+    }
+    private void checkUserLogin() {
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        editor = prefs.edit();
 
+        String login = prefs.getString(LOGIN, "false");
+        if (login.equalsIgnoreCase("false")){
+            Intent intent = new Intent(FixedIncomeInfoActivity.this, LoginActivity.class);
+            startActivity(intent);
+        }
     }
 
     private void setupParActions() {

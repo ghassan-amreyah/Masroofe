@@ -77,6 +77,18 @@
             android:textColor="@color/jacarta"
             android:textStyle="bold" />
 
+        <androidx.appcompat.widget.AppCompatButton
+            android:id="@+id/logout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="20dp"
+            android:layout_marginEnd="32dp"
+            android:background="@drawable/btn_background"
+            android:text="@string/logout"
+            android:textColor="@color/jacarta"
+            android:textStyle="bold" />
+
 
     </LinearLayout>
 

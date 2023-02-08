@@ -1,7 +1,6 @@
 package com.example.masroofe;
 
 import androidx.appcompat.app.AppCompatActivity;
-
 import com.android.volley.Request;
 import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
@@ -14,7 +13,6 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.TextView;
 import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -25,7 +23,6 @@ public class LoginActivity extends AppCompatActivity {
 
     private Button loginBtn, signUpBtn;
     private EditText email, password;
-    private TextView textError;
 
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
@@ -34,7 +31,6 @@ public class LoginActivity extends AppCompatActivity {
     public static final String PASSWORD = "PASSWORD";
     public static final String FULLNAME = "FULLNAME";
     public static final String EMAIL = "EMAIL";
-    public static final String BIRTHDATE = "BIRTHDATE";
     public static final String FIXEDINCOME = "FIXEDINCOME";
 
 
@@ -44,25 +40,41 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
         getSupportActionBar().hide();
+        checkUserLogin();
+        setupReference();
 
         //References
-        setupReference();
         loginSetup();
         signupSetup();
+
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        checkUserLogin();
     }
 
 
     //--------------Methods---------------------------------------------------------
 
+    private void checkUserLogin() {
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        editor = prefs.edit();
+
+        String login = prefs.getString(LOGIN, "false");
+        if (login.equalsIgnoreCase("true")){
+            Intent intent = new Intent(LoginActivity.this, MainActivity.class);
+            startActivity(intent);
+        }
+    }
+
     //References
     private void setupReference() {
         email = findViewById(R.id.email);
-        textError = findViewById(R.id.error);
         password = findViewById(R.id.password);
         loginBtn = findViewById(R.id.loginBtn);
         signUpBtn = findViewById(R.id.signUpBtnInLoginActivity);
-        prefs = PreferenceManager.getDefaultSharedPreferences(this);
-        editor = prefs.edit();
     }
 
 
@@ -91,7 +103,6 @@ public class LoginActivity extends AppCompatActivity {
                         editor.putString(USERNAME,jsonObject.getString("username"));
                         editor.putString(PASSWORD,jsonObject.getString("password"));
                         editor.putString(FULLNAME,jsonObject.getString("fullname"));
-                        editor.putString(BIRTHDATE,jsonObject.getString("birthdate"));
                         editor.putString(EMAIL,jsonObject.getString("email"));
                         editor.putString(FIXEDINCOME,jsonObject.getString("fixedincome"));
                         editor.commit();
@@ -106,7 +117,6 @@ public class LoginActivity extends AppCompatActivity {
         }, new com.android.volley.Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                textError.setText(error.toString());
                 Toast.makeText(LoginActivity.this, "" + error, Toast.LENGTH_SHORT).show();
             }
         }){

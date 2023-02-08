@@ -3,19 +3,37 @@ package com.example.masroofe;
 import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.Intent;
+import android.content.SharedPreferences;
 import android.os.Bundle;
+import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.ImageView;
 
 public class AddActivity extends AppCompatActivity {
     private ImageView imgHomePage, imgUserGuide, imgSetting, imgMonthsRecord;
 
+    private SharedPreferences prefs;
+    private SharedPreferences.Editor editor;
+    public static final String LOGIN = "LOGIN";
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.add_activity);
         getSupportActionBar().hide();
+        checkUserLogin();
         setupParActions();
+    }
+
+    private void checkUserLogin() {
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        editor = prefs.edit();
+
+        String login = prefs.getString(LOGIN, "false");
+        if (login.equalsIgnoreCase("false")){
+            Intent intent = new Intent(AddActivity.this, LoginActivity.class);
+            startActivity(intent);
+        }
     }
 
     private void setupParActions() {
