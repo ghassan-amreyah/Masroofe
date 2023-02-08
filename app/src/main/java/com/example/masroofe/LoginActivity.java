@@ -69,9 +69,16 @@ public class LoginActivity extends AppCompatActivity {
     private void loginSetup() {
         loginBtn.setOnClickListener(new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                //if email or password null
-                LoginUser(email.getText().toString(),password.getText().toString());
+            public void onClick(View view)
+            {
+                if (email.length() > 0 && password.length() > 0)
+                {
+                    LoginUser(email.getText().toString(), password.getText().toString());
+                }
+                else
+                {
+                    Toast.makeText(LoginActivity.this, "أملئ جميع الحقول، وحاول مرة أخرى", Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }
@@ -85,7 +92,7 @@ public class LoginActivity extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     if(jsonObject.getString("error").equalsIgnoreCase("true")){
-                        Toast.makeText(LoginActivity.this, "البيانات غير صحيحة! حاول مرة أخرى", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(LoginActivity.this, "البيانات غير صحيحة!\n حاول مرة أخرى!", Toast.LENGTH_SHORT).show();
                     }else{
                         editor.putString(LOGIN, "true");
                         editor.putString(USERNAME,jsonObject.getString("username"));
