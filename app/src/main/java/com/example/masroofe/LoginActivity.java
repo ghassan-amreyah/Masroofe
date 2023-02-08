@@ -14,6 +14,7 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -24,6 +25,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private Button loginBtn, signUpBtn;
     private EditText email, password;
+    private TextView textError;
 
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
@@ -55,6 +57,7 @@ public class LoginActivity extends AppCompatActivity {
     //References
     private void setupReference() {
         email = findViewById(R.id.email);
+        textError = findViewById(R.id.error);
         password = findViewById(R.id.password);
         loginBtn = findViewById(R.id.loginBtn);
         signUpBtn = findViewById(R.id.signUpBtnInLoginActivity);
@@ -103,6 +106,7 @@ public class LoginActivity extends AppCompatActivity {
         }, new com.android.volley.Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
+                textError.setText(error.toString());
                 Toast.makeText(LoginActivity.this, "" + error, Toast.LENGTH_SHORT).show();
             }
         }){
