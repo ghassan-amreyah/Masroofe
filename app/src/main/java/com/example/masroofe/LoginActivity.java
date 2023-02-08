@@ -30,7 +30,6 @@ public class LoginActivity extends AppCompatActivity {
     private SharedPreferences.Editor editor;
     public static final String LOGIN = "LOGIN";
     public static final String USERNAME = "USERNAME";
-    public static final String PASSWORD = "PASSWORD";
     public static final String FULLNAME = "FULLNAME";
     public static final String EMAIL = "EMAIL";
     public static final String FIXEDINCOME = "FIXEDINCOME";
@@ -113,7 +112,6 @@ public class LoginActivity extends AppCompatActivity {
                     }else{
                         editor.putString(LOGIN, "true");
                         editor.putString(USERNAME,jsonObject.getString("username"));
-                        editor.putString(PASSWORD,jsonObject.getString("password"));
                         editor.putString(FULLNAME,jsonObject.getString("fullname"));
                         editor.putString(EMAIL,jsonObject.getString("email"));
                         editor.putString(FIXEDINCOME,jsonObject.getString("fixedincome"));
