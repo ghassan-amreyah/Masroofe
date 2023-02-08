@@ -25,9 +25,10 @@ import java.util.Map;
 public class UpdateUserInformation extends AppCompatActivity {
     private Button updateUserInformation;
     private EditText fullName, username, email;
+    private TextView textError;
+
     private ImageView imgHomePage, imgMonthsRecord, imgUserGuide, imgSetting;
     private FloatingActionButton ParAddButton;
-    private TextView textError;
 
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
