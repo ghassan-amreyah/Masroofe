@@ -89,7 +89,7 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(LoginActivity.this, "أملئ جميع الحقول، وحاول مرة أخرى", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "أملئ جميع الحقول،\n وحاول مرة أخرى", Toast.LENGTH_SHORT).show();
                 }
             }
         });
@@ -104,6 +104,8 @@ public class LoginActivity extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     if(jsonObject.getString("error").equalsIgnoreCase("true")){
+                        textError.setText("البيانات غير صحيحة!\nحاول مرة أخرى!");
+
                         Toast.makeText(LoginActivity.this, "البيانات غير صحيحة!\n حاول مرة أخرى!", Toast.LENGTH_SHORT).show();
                     }else{
                         editor.putString(LOGIN, "true");
