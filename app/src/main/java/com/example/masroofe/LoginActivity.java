@@ -13,6 +13,7 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,6 +24,7 @@ public class LoginActivity extends AppCompatActivity {
 
     private Button loginBtn, signUpBtn;
     private EditText email, password;
+    private TextView textError;
 
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
@@ -75,6 +77,7 @@ public class LoginActivity extends AppCompatActivity {
         password = findViewById(R.id.password);
         loginBtn = findViewById(R.id.loginBtn);
         signUpBtn = findViewById(R.id.signUpBtnInLoginActivity);
+        textError = findViewById(R.id.error);
     }
 
 
