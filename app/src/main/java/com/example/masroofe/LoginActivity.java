@@ -42,10 +42,10 @@ public class LoginActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.login_activity);
         getSupportActionBar().hide();
-        checkUserLogin();
-        setupReference();
 
         //References
+        checkUserLogin();
+        setupReference();
         loginSetup();
         signupSetup();
 
@@ -92,7 +92,8 @@ public class LoginActivity extends AppCompatActivity {
                 }
                 else
                 {
-                    Toast.makeText(LoginActivity.this, "أملئ جميع الحقول،\n وحاول مرة أخرى", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(LoginActivity.this, "أملئ جميع الحقول\n وحاول مرة أخرى!", Toast.LENGTH_SHORT).show();
+                    textError.setText("أملئ جميع الحقول وحاول مرة أخرى!");
                 }
             }
         });
@@ -107,7 +108,7 @@ public class LoginActivity extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     if(jsonObject.getString("error").equalsIgnoreCase("true")){
-                        textError.setText("البيانات غير صحيحة!\nحاول مرة أخرى!");
+                        textError.setText("البيانات غير صحيحة! حاول مرة أخرى!");
 
                         Toast.makeText(LoginActivity.this, "البيانات غير صحيحة!\n حاول مرة أخرى!", Toast.LENGTH_SHORT).show();
                     }else{
