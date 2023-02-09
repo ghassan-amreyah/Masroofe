@@ -126,7 +126,7 @@ public class UpdateUserInformation extends AppCompatActivity {
     }
 
     private void updateUserInformation(String fullname, String username, String newusername, String email) {
-        String url = "http://web1190759.studentswebprojects.ritaj.ps/android-restAPI/updateuserinformation.php";
+        String url = "https://adam.s-matar.com/android-restAPI/updateuserinformation.php";
         RequestQueue queue = Volley.newRequestQueue(UpdateUserInformation.this);
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
             @Override

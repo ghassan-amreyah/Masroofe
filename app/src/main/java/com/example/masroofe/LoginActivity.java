@@ -98,7 +98,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void LoginUser(String username, String password) {
-        String url = "http://web1190759.studentswebprojects.ritaj.ps/android-restAPI/userlogin.php";
+        String url = "https://adam.s-matar.com/android-restAPI/userlogin.php";
         RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
             @Override

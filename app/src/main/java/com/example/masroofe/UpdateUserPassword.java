@@ -129,7 +129,7 @@ public class UpdateUserPassword extends AppCompatActivity {
     }
 
     private void updateUserPassword(String password, String newpassword) {
-        String url = "http://web1190759.studentswebprojects.ritaj.ps/android-restAPI/updateuserpassword.php";
+        String url = "https://adam.s-matar.com/android-restAPI/updateuserpassword.php";
         RequestQueue queue = Volley.newRequestQueue(UpdateUserPassword.this);
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
             @Override
