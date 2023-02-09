@@ -30,7 +30,6 @@ public class LoginActivity extends AppCompatActivity {
     private SharedPreferences.Editor editor;
     public static final String LOGIN = "LOGIN";
     public static final String USERNAME = "USERNAME";
-    public static final String PASSWORD = "PASSWORD";
     public static final String FULLNAME = "FULLNAME";
     public static final String EMAIL = "EMAIL";
     public static final String FIXEDINCOME = "FIXEDINCOME";
@@ -100,7 +99,7 @@ public class LoginActivity extends AppCompatActivity {
     }
 
     private void LoginUser(String username, String password) {
-        String url = "http://web1190759.studentswebprojects.ritaj.ps/android-restAPI/userlogin.php";
+        String url = "https://adam.s-matar.com/android-restAPI/userlogin.php";
         RequestQueue queue = Volley.newRequestQueue(LoginActivity.this);
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
             @Override
@@ -114,7 +113,6 @@ public class LoginActivity extends AppCompatActivity {
                     }else{
                         editor.putString(LOGIN, "true");
                         editor.putString(USERNAME,jsonObject.getString("username"));
-                        editor.putString(PASSWORD,jsonObject.getString("password"));
                         editor.putString(FULLNAME,jsonObject.getString("fullname"));
                         editor.putString(EMAIL,jsonObject.getString("email"));
                         editor.putString(FIXEDINCOME,jsonObject.getString("fixedincome"));
