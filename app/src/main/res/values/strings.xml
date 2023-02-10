@@ -51,6 +51,8 @@
     <string name="month">الشهر</string>
     <string name="year">السنة</string>
     <string name="logout">تسجيل الخروج</string>
+    <string name="UpdateFixedIncome">تحديث قيمة الدخل الشهري الثابت</string>
+    <string name="Update">تحديث</string>
 
     <string-array name="type_incomes">
         <item>يومي</item>
