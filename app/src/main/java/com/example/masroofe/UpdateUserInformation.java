@@ -42,6 +42,8 @@ public class UpdateUserInformation extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.update_user_information_activity);
         getSupportActionBar().hide();
+
+        //--References
         checkUserLogin();
         setupReference();
         setUp();
