@@ -114,7 +114,9 @@ public class UpdateFixedIncomeActivity extends AppCompatActivity {
         addIncomeBtn = findViewById(R.id.addIncomeBtn);
         incomeAmount = findViewById(R.id.incomeAmount);
 
-        incomeAmount.setText(prefs.getString(FIXEDINCOME,""));
+        if(!prefs.getString(FIXEDINCOME,"").equalsIgnoreCase("null")){
+            incomeAmount.setText(prefs.getString(FIXEDINCOME,""));
+        }
     }
     private void addIncomeSetup() {
         addIncomeBtn.setOnClickListener(new View.OnClickListener() {
