@@ -107,7 +107,7 @@ public class SignupActivity extends AppCompatActivity {
 
     private void SignupUser(String username, String password, String fullName, String email)
     {
-        String url = "http://web1190759.studentswebprojects.ritaj.ps/android-restAPI/sinup.php";
+        String url = "https://adam.s-matar.com/android-restAPI/signup.php";
         RequestQueue queue = Volley.newRequestQueue(SignupActivity.this);
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
             @Override
