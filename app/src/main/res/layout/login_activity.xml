@@ -102,7 +102,7 @@
             android:text="@string/loginBtnTitle" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/signUpBtnInLoginActivity"
+            android:id="@+id/btn_defineActivity"
             style="@style/buttons_login_style"
             android:background="@drawable/btnsignup_background"
             android:text="@string/createNewAccount" />
