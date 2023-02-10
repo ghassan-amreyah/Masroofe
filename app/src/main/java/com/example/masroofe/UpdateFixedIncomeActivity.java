@@ -26,26 +26,24 @@ import org.json.JSONObject;
 import java.util.HashMap;
 import java.util.Map;
 
-public class FixedIncomeInfoActivity extends AppCompatActivity {
+public class UpdateFixedIncomeActivity extends AppCompatActivity {
 
     private ImageView imgHomePage, imgMonthsRecord, imgUserGuide, imgSetting;
     private FloatingActionButton ParAddButton;
 
     private Button addIncomeBtn;
-    private TextView nameOfUser;
     private EditText incomeAmount;
 
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
     public static final String LOGIN = "LOGIN";
     public static final String USERNAME = "USERNAME";
-    public static final String FULLNAME = "FULLNAME";
     public static final String FIXEDINCOME = "FIXEDINCOME";
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.fixed_income_info_activity);
+        setContentView(R.layout.activity_update_fixed_income);
         getSupportActionBar().hide();
         checkUserLogin();
         setupParActions();
@@ -53,13 +51,14 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
         setupReference();
         addIncomeSetup();
     }
+
     private void checkUserLogin() {
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         editor = prefs.edit();
 
         String login = prefs.getString(LOGIN, "false");
         if (login.equalsIgnoreCase("false")){
-            Intent intent = new Intent(FixedIncomeInfoActivity.this, LoginActivity.class);
+            Intent intent = new Intent(UpdateFixedIncomeActivity.this, LoginActivity.class);
             startActivity(intent);
         }
     }
@@ -74,7 +73,7 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
         imgHomePage.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FixedIncomeInfoActivity.this, MainActivity.class);
+                Intent intent = new Intent(UpdateFixedIncomeActivity.this, MainActivity.class);
                 startActivity(intent);
             }
         });
@@ -82,7 +81,7 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
         imgMonthsRecord.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FixedIncomeInfoActivity.this, MonthsActivity.class);
+                Intent intent = new Intent(UpdateFixedIncomeActivity.this, MonthsActivity.class);
                 startActivity(intent);
             }
         });
@@ -97,7 +96,7 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
         imgSetting.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FixedIncomeInfoActivity.this, SettingsActivity.class);
+                Intent intent = new Intent(UpdateFixedIncomeActivity.this, SettingsActivity.class);
                 startActivity(intent);
             }
         });
@@ -105,30 +104,25 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
         ParAddButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(FixedIncomeInfoActivity.this, AddActivity.class);
+                Intent intent = new Intent(UpdateFixedIncomeActivity.this, AddActivity.class);
                 startActivity(intent);
             }
         });
     }
 
-    //--------------Methods---------------------------------------------------------
-
-    //References
     private void setupReference() {
-        nameOfUser = findViewById(R.id.nameOfUser);
         addIncomeBtn = findViewById(R.id.addIncomeBtn);
         incomeAmount = findViewById(R.id.incomeAmount);
 
-        nameOfUser.setText("مرحباً بك " + prefs.getString(FULLNAME, ""));
+        incomeAmount.setText(prefs.getString(FIXEDINCOME,""));
     }
-
     private void addIncomeSetup() {
         addIncomeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 int amount = Integer.parseInt(incomeAmount.getText().toString());
                 if(amount<1){
-                    Toast.makeText(FixedIncomeInfoActivity.this, "اضف قيمة الراتب الثابت أولاً!", Toast.LENGTH_SHORT).show();
+                    Toast.makeText(UpdateFixedIncomeActivity.this, "اضف قيمة الراتب الثابت أولاً!", Toast.LENGTH_SHORT).show();
                 }else{
                     addIncome(amount);
                 }
@@ -136,21 +130,22 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
         });
     }
 
+
     private void addIncome(int amount){
         String url = "https://adam.s-matar.com/android-restAPI/addfixedincome.php";
-        RequestQueue queue = Volley.newRequestQueue(FixedIncomeInfoActivity.this);
+        RequestQueue queue = Volley.newRequestQueue(UpdateFixedIncomeActivity.this);
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
             @Override
             public void onResponse(String response) {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     if (jsonObject.getString("error").equalsIgnoreCase("true")) {
-                        Toast.makeText(FixedIncomeInfoActivity.this, "حدث خطأ!", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(UpdateFixedIncomeActivity.this, "حدث خطأ!", Toast.LENGTH_SHORT).show();
                     } else {
                         editor.putString(FIXEDINCOME, String.valueOf(amount));
                         editor.commit();
-                        Toast.makeText(FixedIncomeInfoActivity.this, "تم إضافة الراتب الثابت بنجاح!", Toast.LENGTH_SHORT).show();
-                        Intent intent = new Intent(FixedIncomeInfoActivity.this, MainActivity.class);
+                        Toast.makeText(UpdateFixedIncomeActivity.this, "تم إضافة الراتب الثابت بنجاح!", Toast.LENGTH_SHORT).show();
+                        Intent intent = new Intent(UpdateFixedIncomeActivity.this, SettingsActivity.class);
                         startActivity(intent);
                     }
                 } catch (JSONException e) {
@@ -160,7 +155,7 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
         }, new com.android.volley.Response.ErrorListener() {
             @Override
             public void onErrorResponse(VolleyError error) {
-                Toast.makeText(FixedIncomeInfoActivity.this, "" + error, Toast.LENGTH_SHORT).show();
+                Toast.makeText(UpdateFixedIncomeActivity.this, "" + error, Toast.LENGTH_SHORT).show();
             }
         }) {
             @Override
@@ -180,4 +175,3 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
         queue.add(request);
     }
 }
-
