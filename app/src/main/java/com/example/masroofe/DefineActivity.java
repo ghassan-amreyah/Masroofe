@@ -7,7 +7,9 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.ImageView;
+import android.widget.Spinner;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
@@ -15,7 +17,8 @@ public class DefineActivity extends AppCompatActivity {
 
     private ImageView imgHomePage, imgMonthsRecord, imgUserGuide, imgSetting;
     private FloatingActionButton ParAddButton;
-
+    private Spinner spinner;
+    private EditText accountName;
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
     public static final String LOGIN = "LOGIN";
@@ -27,7 +30,25 @@ public class DefineActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         checkUserLogin();
         setupParActions();
+        setUp();
     }
+
+    public void btn_defineActivity_OnClick(View view) {
+        String type = spinner.getSelectedItem().toString();
+        String name = accountName.getText().toString();
+        if(type == "مصروف"){
+            Expenses exp = new Expenses(name, 0, 0);
+        }
+        else if (type == "مصروف"){
+            Revenues rev = new Revenues(name, 0 ,0);
+        }
+    }
+
+    private void setUp() {
+        spinner = findViewById(R.id.AccountType);
+        accountName = findViewById(R.id.AccountName);
+    }
+
 
     private void checkUserLogin() {
         prefs = PreferenceManager.getDefaultSharedPreferences(this);

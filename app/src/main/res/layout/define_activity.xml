@@ -50,11 +50,12 @@
                 android:theme="@style/label_fields_style" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/signUpBtnInLoginActivity"
+                android:id="@+id/btn_defineActivity"
                 style="@style/buttons_login_style"
                 android:background="@drawable/btnsignup_background"
                 android:text="إضافة إلى القائمة"
-                android:textColor="@color/head_filed_color" />
+                android:textColor="@color/head_filed_color"
+                android:onClick="btn_defineActivity_OnClick"/>
 
         </LinearLayout>
 
