@@ -75,7 +75,7 @@ public class LoginActivity extends AppCompatActivity {
         email = findViewById(R.id.email);
         password = findViewById(R.id.password);
         loginBtn = findViewById(R.id.loginBtn);
-        signUpBtn = findViewById(R.id.signUpBtnInLoginActivity);
+        signUpBtn = findViewById(R.id.btn_defineActivity);
         textError = findViewById(R.id.error);
     }
 
