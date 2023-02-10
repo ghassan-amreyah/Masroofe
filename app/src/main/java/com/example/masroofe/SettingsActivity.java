@@ -109,7 +109,7 @@ public class SettingsActivity extends AppCompatActivity {
         fixedIncome.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent intent = new Intent(SettingsActivity.this, FixedIncomeInfoActivity.class);
+                Intent intent = new Intent(SettingsActivity.this, UpdateFixedIncomeActivity.class);
                 startActivity(intent);
             }
         });
