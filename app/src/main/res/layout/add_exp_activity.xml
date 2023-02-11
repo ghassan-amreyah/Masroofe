@@ -32,10 +32,10 @@
                 style="@style/label_fields_style"
                 android:text="اسم الحساب" />
 
-            <EditText
+            <Spinner
                 android:id="@+id/AccountName"
                 style="@style/fields_style"
-                android:hint="Account Name" />
+                 />
 
             <TextView
                 style="@style/label_fields_style"

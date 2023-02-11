@@ -38,8 +38,9 @@ public class DefineActivity extends AppCompatActivity {
         String name = accountName.getText().toString();
         if(type == "مصروف"){
             Expenses exp = new Expenses(name, 0, 0);
+
         }
-        else if (type == "مصروف"){
+        else if (type == "إيراد / دخل"){
             Revenues rev = new Revenues(name, 0 ,0);
         }
     }
