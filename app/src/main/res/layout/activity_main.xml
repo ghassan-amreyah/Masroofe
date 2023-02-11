@@ -34,7 +34,7 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="500px">
+            android:layout_height="200dp">
 
             <ImageView
                 android:id="@+id/imageView2"
@@ -55,66 +55,55 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|center"
-                android:layout_marginEnd="10dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="30dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:id="@+id/textView2"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginTop="35dp"
-                    android:layout_marginRight="17dp"
-                    android:layout_marginLeft="17dp"
+                    android:layout_gravity="center"
                     android:text="@string/income_during_the_month"
                     android:textColor="@color/head_filed_color"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/textView4"
+                    android:id="@+id/fullIncomeInThisMonth"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="50dp"
-                    android:layout_marginRight="35dp"
-                    android:layout_marginBottom="35dp"
                     android:fontFamily="monospace"
+                    android:layout_gravity="center"
+                    android:paddingTop="10dp"
                     android:text="0.0"
-                    android:textColor="@color/bright_gray"
-                    android:textSize="34sp" />
+                    android:textColor="@color/jacarta"
+                    android:textSize="30sp" />
             </LinearLayout>
 
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center"
-                android:layout_marginStart="30dp"
-                android:layout_marginTop="20dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginStart="50dp"
                 android:orientation="vertical">
 
             <TextView
                 android:id="@+id/textView3"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_gravity="left|center"
-                android:layout_marginTop="35dp"
-                android:layout_marginRight="17dp"
-                android:layout_marginLeft="17dp"
+                android:layout_gravity="center"
                 android:text="@string/remainder_of_the_income"
                 android:textColor="@color/head_filed_color"
                 android:textStyle="bold" />
             <TextView
-                android:id="@+id/fixedIncome"
+                android:id="@+id/fixedIncomeInMainActivity"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginRight="35dp"
-                android:layout_marginLeft="35dp"
-                android:layout_marginBottom="35dp"
+                android:layout_gravity="center"
                 android:fontFamily="monospace"
+                android:paddingTop="10dp"
                 android:text="0.0"
-                android:textColor="@color/bright_gray"
-                android:textSize="34sp" />
+                android:textColor="@color/jacarta"
+                android:textSize="30sp" />
             </LinearLayout>
 
             <TextView
@@ -138,21 +127,21 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 app:srcCompat="@drawable/light_silver_p"
-
                 />
 
             <TextView
+                android:id="@+id/mainSumAddInc"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center"
-                android:layout_marginStart="16dp"
+                android:layout_marginStart="25dp"
                 android:layout_marginTop="16dp"
                 android:layout_marginEnd="19dp"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="monospace"
                 android:text="0.0"
                 android:textColor="@color/head_filed_color"
-                android:textSize="48sp" />
+                android:textSize="30sp" />
 
             <TextView
                 android:layout_width="wrap_content"
@@ -167,8 +156,8 @@
 
         <FrameLayout
             android:layout_width="match_parent"
-            android:layout_height="208dp">
-
+            android:layout_marginTop="30dp"
+            android:layout_height="wrap_content">
 
             <ImageView
                 android:layout_width="180dp"
@@ -181,32 +170,31 @@
             <LinearLayout
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="10dp"
                 android:layout_gravity="left|center"
-                android:layout_marginTop="20dp"
-                android:layout_marginStart="30dp"
-                android:layout_marginBottom="20dp"
                 android:orientation="vertical">
 
             <TextView
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_marginLeft="15dp"
-                android:layout_marginRight="15dp"
-                android:paddingTop="20dp"
-                android:text="@string/your_extra_income"
-                android:textColor="@color/bright_gray"
-                android:textSize="12dp"
-                android:textStyle="bold" />
-            <TextView
-                android:layout_width="88dp"
-                android:layout_height="66dp"
-                android:layout_marginBottom="30dp"
                 android:layout_marginLeft="20dp"
                 android:layout_marginRight="20dp"
+                android:textDirection="rtl"
+                android:layout_gravity="center"
+                android:text="@string/your_extra_income"
+                android:textColor="@color/bright_gray"
+                android:textSize="15sp"
+                android:textStyle="bold" />
+            <TextView
+                android:id="@+id/sumAdditionIncome"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
                 android:fontFamily="monospace"
+                android:layout_gravity="center"
+                android:paddingTop="20dp"
                 android:text="0.0"
                 android:textColor="@color/bright_gray"
-                android:textSize="48sp" />
+                android:textSize="30sp" />
 
             </LinearLayout>
 
@@ -221,32 +209,29 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="right|center"
-                android:layout_marginTop="20dp"
-                android:layout_marginEnd="30dp"
-                android:layout_marginBottom="20dp"
+                android:layout_marginEnd="50dp"
                 android:orientation="vertical">
 
                 <TextView
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:layout_marginLeft="7dp"
-                    android:layout_marginRight="7dp"
-                    android:paddingTop="20dp"
+                    android:layout_gravity="center"
+                    android:textDirection="rtl"
                     android:text="@string/monthly_expenses"
                     android:textColor="@color/bright_gray"
-                    android:textSize="12dp"
+                    android:textSize="15sp"
                     android:textStyle="bold" />
 
                 <TextView
-                    android:layout_width="98dp"
-                    android:layout_height="65dp"
-                    android:layout_marginBottom="30dp"
-                    android:layout_marginLeft="20dp"
-                    android:layout_marginRight="20dp"
+                    android:id="@+id/sumExpOnThisMonth"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:paddingTop="10dp"
                     android:fontFamily="monospace"
+                    android:layout_gravity="center"
                     android:text="0.0"
                     android:textColor="@color/bright_gray"
-                    android:textSize="48sp" />
+                    android:textSize="30sp" />
             </LinearLayout>
 
 

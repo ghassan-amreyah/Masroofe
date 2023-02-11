@@ -46,7 +46,7 @@
     <string name="income_during_the_month">كامل الدخل خلال الشهر</string>
     <string name="remainder_of_the_income">المتبقي من الدخل</string>
     <string name="your_extra_income">مجموع دخلك الإضافي</string>
-    <string name="monthly_expenses">مجموع مصاريفك لهذا الشهر</string>
+    <string name="monthly_expenses">مجموع مصاريفك\n لهذا الشهر</string>
     <string name="last_month_expenses">مجموع مدخرات الشهر الماضي</string>
     <string name="month">الشهر</string>
     <string name="year">السنة</string>
