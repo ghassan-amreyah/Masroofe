@@ -3,7 +3,7 @@
     <string name="titleNameInSplashActivity">MASROOFE</string>
     <string name="mainTitleInLoginActivity">مرحبًا بك في تطبيق مصروفي</string>
     <string name="noteInLoginActivity">حان الوقت لتعرف\n وين راتبك بطير</string>
-    <string name="emailTitle">اسم المستخدم</string>
+    <string name="emailTitle">البريد الإلكتروني</string>
     <string name="usernameTitle">اسم المستخدم</string>
     <string name="passwordTitle">كلمة السر</string>
     <string name="email">Username</string>
