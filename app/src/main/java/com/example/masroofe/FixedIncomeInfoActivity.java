@@ -9,7 +9,6 @@ import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
-import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -18,7 +17,6 @@ import com.android.volley.RequestQueue;
 import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
-import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -27,9 +25,6 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class FixedIncomeInfoActivity extends AppCompatActivity {
-
-    private ImageView imgHomePage, imgMonthsRecord, imgUserGuide, imgSetting;
-    private FloatingActionButton ParAddButton;
 
     private Button addIncomeBtn;
     private TextView nameOfUser;
@@ -47,74 +42,33 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.fixed_income_info_activity);
         getSupportActionBar().hide();
-        checkUserLogin();
-        setupParActions();
         //References
         setupReference();
         addIncomeSetup();
     }
+
     private void checkUserLogin() {
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         editor = prefs.edit();
-
         String login = prefs.getString(LOGIN, "false");
-        if (login.equalsIgnoreCase("false")){
-            Intent intent = new Intent(FixedIncomeInfoActivity.this, LoginActivity.class);
+        if (login.equalsIgnoreCase("true")) {
+            Intent intent = new Intent(FixedIncomeInfoActivity.this, MainActivity.class);
             startActivity(intent);
         }
     }
 
-    private void setupParActions() {
-        imgHomePage = findViewById(R.id.imgHomePage);
-        imgMonthsRecord = findViewById(R.id.imgMonthsRecord);
-        imgUserGuide = findViewById(R.id.imgUserGuide);
-        imgSetting = findViewById(R.id.imgSetting);
-        ParAddButton = findViewById(R.id.ParAddButton);
-
-        imgHomePage.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(FixedIncomeInfoActivity.this, MainActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        imgMonthsRecord.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(FixedIncomeInfoActivity.this, MonthsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        imgUserGuide.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                return;
-            }
-        });
-
-        imgSetting.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(FixedIncomeInfoActivity.this, SettingsActivity.class);
-                startActivity(intent);
-            }
-        });
-
-        ParAddButton.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent intent = new Intent(FixedIncomeInfoActivity.this, AddActivity.class);
-                startActivity(intent);
-            }
-        });
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        checkUserLogin();
     }
 
     //--------------Methods---------------------------------------------------------
 
     //References
     private void setupReference() {
+        prefs = PreferenceManager.getDefaultSharedPreferences(this);
+        editor = prefs.edit();
         nameOfUser = findViewById(R.id.nameOfUser);
         addIncomeBtn = findViewById(R.id.addIncomeBtn);
         incomeAmount = findViewById(R.id.incomeAmount);
@@ -127,16 +81,16 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 int amount = Integer.parseInt(incomeAmount.getText().toString());
-                if(amount<1){
+                if (amount < 1) {
                     Toast.makeText(FixedIncomeInfoActivity.this, "اضف قيمة الراتب الثابت أولاً!", Toast.LENGTH_SHORT).show();
-                }else{
+                } else {
                     addIncome(amount);
                 }
             }
         });
     }
 
-    private void addIncome(int amount){
+    private void addIncome(int amount) {
         String url = "https://adam.s-matar.com/android-restAPI/addfixedincome.php";
         RequestQueue queue = Volley.newRequestQueue(FixedIncomeInfoActivity.this);
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
@@ -167,6 +121,7 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
             public String getBodyContentType() {
                 return "application/x-www-form-urlencoded; charset=UTF-8";
             }
+
             @Override
             protected Map<String, String> getParams() {
                 Map<String, String> params = new HashMap<String, String>();
