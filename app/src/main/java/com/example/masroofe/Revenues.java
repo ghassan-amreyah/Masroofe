@@ -34,4 +34,33 @@ public class Revenues {
     public void setMonthly_amount(double monthly_amount) {
         this.monthly_amount = monthly_amount;
     }
+
+    // Debit revenues
+    public void inverse_rev (double amount) {
+        Cash cash = new Cash();
+        double available = cash.getMonthly_amount();
+        if(amount <= available) {
+            total_amount -= amount;
+            monthly_amount -= amount;
+
+            double new_monthly_cash = cash.getMonthly_amount() - amount;
+            cash.setMonthly_amount(new_monthly_cash);
+
+            double new_cash = cash.getTotal_amount() - amount;
+            cash.setTotal_amount(new_cash);
+        }
+    }
+
+    // Credit revenues
+    public void add_rev (double amount) {
+        total_amount += amount;
+        monthly_amount += amount;
+
+        Cash cash = new Cash();
+        double new_monthly_cash = cash.getMonthly_amount()+amount;
+        cash.setMonthly_amount(new_monthly_cash);
+
+        double new_cash = cash.getTotal_amount()+amount;
+        cash.setTotal_amount(new_cash);
+    }
 }

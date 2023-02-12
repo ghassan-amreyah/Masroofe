@@ -34,4 +34,34 @@ public class Expenses {
     public void setMonthly_amount(double monthly_amount) {
         this.monthly_amount = monthly_amount;
     }
+
+    // Debit Expenses
+    public void add_expense (double amount) {
+        Cash cash = new Cash();
+        double available = cash.getMonthly_amount();
+        if(amount <= available) {
+            total_amount += amount;
+            monthly_amount += amount;
+
+            double new_monthly_cash = cash.getMonthly_amount() - amount;
+            cash.setMonthly_amount(new_monthly_cash);
+
+            double new_cash = cash.getTotal_amount() - amount;
+            cash.setTotal_amount(new_cash);
+        }
+    }
+
+    // Credit Expenses
+    public void inverse_expense (double amount) {
+
+            total_amount -= amount;
+            monthly_amount -= amount;
+
+            Cash cash = new Cash();
+            double new_monthly_cash = cash.getMonthly_amount() - amount;
+            cash.setMonthly_amount(new_monthly_cash);
+
+            double new_cash = cash.getTotal_amount() - amount;
+            cash.setTotal_amount(new_cash);
+    }
 }
