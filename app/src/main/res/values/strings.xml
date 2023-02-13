@@ -53,6 +53,7 @@
     <string name="logout">تسجيل الخروج</string>
     <string name="UpdateFixedIncome">تحديث قيمة الدخل الشهري الثابت</string>
     <string name="Update">تحديث</string>
+    <string name="cash">Cash Available</string>
 
     <string-array name="type_incomes">
         <item>يومي</item>
@@ -84,5 +85,8 @@
         <item>10</item>
         <item>11</item>
         <item>12</item>
+    </string-array>
+    <string-array name="Choose">
+        <item>اختر الحساب</item>
     </string-array>
 </resources>

@@ -11,7 +11,7 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="250dp"
+        android:layout_height="170dp"
         android:background="@drawable/top_background"
         android:orientation="vertical"
         tools:ignore="MissingConstraints">
@@ -56,6 +56,30 @@
             android:hint="@string/amount_of_income"
             android:inputType="number"
             android:maxLines="1" />
+
+        <TextView
+            style="@style/label_fields_style"
+            android:layout_gravity="right"
+            android:layout_marginTop="30dp"
+            android:text="المبلغ المتوفر حاليًا"
+            android:textColor="@color/white" />
+
+        <EditText
+            android:id="@+id/cashAmount"
+            style="@style/fields_style"
+            android:hint="@string/cash"
+            android:inputType="number"
+            android:maxLines="1" />
+        <TextView
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="32dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="32dp"
+            android:textAlignment="textStart"
+            android:textColor="@color/white"
+            android:text="ملاحظة: في حال لم تدخل المبلغ سيتم اعتبار قيمة الدخل الشهري الثابت هو المبلغ الحالي"
+            android:textDirection="firstStrong" />
 
         <androidx.appcompat.widget.AppCompatButton
             android:id="@+id/addIncomeBtn"

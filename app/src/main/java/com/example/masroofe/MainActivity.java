@@ -8,16 +8,21 @@ import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.TextView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class MainActivity extends AppCompatActivity {
+    private TextView FixedIncome, Cash;
     private ImageView imgMonthsRecord, imgUserGuide, imgSetting;
     private FloatingActionButton ParAddButton;
 
     private SharedPreferences prefs;
     private SharedPreferences.Editor editor;
     public static final String LOGIN = "LOGIN";
+    public static final String FIXEDINCOME = "FIXEDINCOME";
+    public static final String CASH = "CASH";
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -41,9 +46,10 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void setupReference() {
-
-        //mawada ref
-
+        FixedIncome = findViewById(R.id.fixedIncome);
+        Cash = findViewById(R.id.cash);
+        FixedIncome.setText(prefs.getString(FIXEDINCOME,"0"));
+        Cash.setText(prefs.getString(CASH,"0"));
     }
 
     private void setupParActions() {

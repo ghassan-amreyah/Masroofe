@@ -68,13 +68,12 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/fullIncomeInThisMonth"
+                    android:id="@+id/fixedIncome"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:fontFamily="monospace"
                     android:layout_gravity="center"
                     android:paddingTop="10dp"
-                    android:text="0.0"
                     android:textColor="@color/jacarta"
                     android:textSize="30sp" />
             </LinearLayout>
@@ -95,13 +94,12 @@
                 android:textColor="@color/head_filed_color"
                 android:textStyle="bold" />
             <TextView
-                android:id="@+id/fixedIncomeInMainActivity"
+                android:id="@+id/cash"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="center"
                 android:fontFamily="monospace"
                 android:paddingTop="10dp"
-                android:text="0.0"
                 android:textColor="@color/jacarta"
                 android:textSize="30sp" />
             </LinearLayout>

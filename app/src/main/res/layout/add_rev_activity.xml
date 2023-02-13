@@ -37,11 +37,12 @@
                 android:layout_width="350dp"
                 android:layout_height="50dp"
                 android:backgroundTint="@color/white"
+                android:entries="@array/Choose"
                 android:theme="@style/spinners_style" />
 
             <TextView
                 style="@style/label_fields_style"
-                android:text="المبلغ المصروف" />
+                android:text="مبلغ الإيراد" />
 
             <EditText
                 android:id="@+id/incomeAmount"
