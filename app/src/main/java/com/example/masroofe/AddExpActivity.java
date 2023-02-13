@@ -7,6 +7,7 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
+import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ImageView;
@@ -24,6 +25,7 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -89,10 +91,17 @@ public class AddExpActivity extends AppCompatActivity {
                     if (jsonObject.getString("error").equalsIgnoreCase("true")) {
                         Toast.makeText(AddExpActivity.this, "حدث خطأ!", Toast.LENGTH_SHORT).show();
                     } else {
-                        JSONArray array = new JSONArray(jsonObject);
-                        for (int i = 0; i < jsonObject.length(); i++) {
-                            array.getString(i); //هان بجيب كل اسماء الاكاونتات تبعات المستخدم
+                        JSONArray array = jsonObject.getJSONArray(response);
+                        ArrayList<String> options = new ArrayList<>();
+
+                        for (int i = 0; i < array.length(); i++) {
+                            String option = array.getString(i);//هان بجيب كل اسماء الاكاونتات تبعات المستخدم
+                            options.add(option);
                         }
+                        ArrayAdapter<String> adapter = new ArrayAdapter<>(AddExpActivity.this, android.R.layout.simple_spinner_item, options);
+                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        accountsSpinner.setAdapter(adapter);
+
 
                     }
                 } catch (JSONException e) {
