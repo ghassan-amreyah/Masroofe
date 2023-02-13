@@ -33,7 +33,7 @@ public class LoginActivity extends AppCompatActivity {
     public static final String FULLNAME = "FULLNAME";
     public static final String EMAIL = "EMAIL";
     public static final String FIXEDINCOME = "FIXEDINCOME";
-
+    public static final String CASH = "CASH";
 
 
     @Override
@@ -112,6 +112,7 @@ public class LoginActivity extends AppCompatActivity {
                         Toast.makeText(LoginActivity.this, "البيانات غير صحيحة!\n حاول مرة أخرى!", Toast.LENGTH_SHORT).show();
                     }else{
                         editor.putString(LOGIN, "true");
+                        editor.putString(CASH, jsonObject.getString("cash"));
                         editor.putString(USERNAME,jsonObject.getString("username"));
                         editor.putString(FULLNAME,jsonObject.getString("fullname"));
                         editor.putString(EMAIL,jsonObject.getString("email"));
