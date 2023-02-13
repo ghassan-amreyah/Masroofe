@@ -128,7 +128,7 @@
                 />
 
             <TextView
-                android:id="@+id/mainSumAddInc"
+                android:id="@+id/sumRev"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_gravity="left|center"
@@ -137,7 +137,6 @@
                 android:layout_marginEnd="19dp"
                 android:layout_marginBottom="16dp"
                 android:fontFamily="monospace"
-                android:text="0.0"
                 android:textColor="@color/head_filed_color"
                 android:textSize="30sp" />
 
@@ -183,14 +182,14 @@
                 android:textColor="@color/bright_gray"
                 android:textSize="15sp"
                 android:textStyle="bold" />
+
             <TextView
-                android:id="@+id/sumAdditionIncome"
+                android:id="@+id/xxxxxxx"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:fontFamily="monospace"
                 android:layout_gravity="center"
                 android:paddingTop="20dp"
-                android:text="0.0"
                 android:textColor="@color/bright_gray"
                 android:textSize="30sp" />
 
@@ -221,13 +220,12 @@
                     android:textStyle="bold" />
 
                 <TextView
-                    android:id="@+id/sumExpOnThisMonth"
+                    android:id="@+id/sumExp"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:paddingTop="10dp"
                     android:fontFamily="monospace"
                     android:layout_gravity="center"
-                    android:text="0.0"
                     android:textColor="@color/bright_gray"
                     android:textSize="30sp" />
             </LinearLayout>

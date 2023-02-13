@@ -21,12 +21,11 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import org.json.JSONArray;
+
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -70,7 +69,7 @@ public class AddRevActivity extends AppCompatActivity {
                     double amount = Double.parseDouble(IncomeAmount.getText().toString());
                     String accountname = accountsSpinner.getSelectedItem().toString();
                     if (amount > 0) {
-                        AddRecord(prefs.getString(USERNAME,""),accountname,amount);
+                        AddRecord(prefs.getString(USERNAME, ""), accountname, amount);
                     } else {
                         Toast.makeText(AddRevActivity.this, "اضف قيمة صحيحة!", Toast.LENGTH_SHORT).show();
                     }
@@ -92,7 +91,6 @@ public class AddRevActivity extends AppCompatActivity {
                     JSONObject jsonObject = new JSONObject(response);
                     if (jsonObject.getString("error").equalsIgnoreCase("true")) {
                         Toast.makeText(AddRevActivity.this, "حدث خطأ!", Toast.LENGTH_SHORT).show();
-                        IncomeAmount.setText(jsonObject.getString("e"));
                     } else {
                         Toast.makeText(AddRevActivity.this, "تم إضافة الإيراد", Toast.LENGTH_SHORT).show();
                     }
