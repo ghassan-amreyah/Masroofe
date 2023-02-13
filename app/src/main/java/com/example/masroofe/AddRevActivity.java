@@ -97,6 +97,7 @@ public class AddRevActivity extends AppCompatActivity {
                             options.add(option);
 
                         }
+                        //mawada
                         ArrayAdapter<String> adapter = new ArrayAdapter<>(AddRevActivity.this, android.R.layout.simple_spinner_item, options);
                         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
                         accountsSpinner.setAdapter(adapter);
