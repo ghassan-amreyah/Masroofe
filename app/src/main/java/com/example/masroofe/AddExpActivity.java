@@ -25,6 +25,8 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
+import java.time.LocalDate;
+import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -67,8 +69,9 @@ public class AddExpActivity extends AppCompatActivity {
             public void onClick(View v) {
                 if (expenseAmount.length() > 0) {
                     double amount = Double.parseDouble(expenseAmount.getText().toString());
+                    String accountname = accountsSpinner.getSelectedItem().toString();
                     if (amount > 0) {
-                        // هان رح نعمل الحركة بس بعدين
+                        AddRecord(prefs.getString(USERNAME,""),accountname,amount);
                     } else {
                         Toast.makeText(AddExpActivity.this, "اضف قيمة صحيحة!", Toast.LENGTH_SHORT).show();
                     }
@@ -78,6 +81,50 @@ public class AddExpActivity extends AppCompatActivity {
 
             }
         });
+    }
+
+    private void AddRecord(String username, String accountname, double amount) {
+        String url = "https://adam.s-matar.com/android-restAPI/addrecord.php";
+        RequestQueue queue = Volley.newRequestQueue(AddExpActivity.this);
+        StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
+            @Override
+            public void onResponse(String response) {
+                try {
+                    JSONObject jsonObject = new JSONObject(response);
+                    if (jsonObject.getString("error").equalsIgnoreCase("true")) {
+                        Toast.makeText(AddExpActivity.this, "حدث خطأ!", Toast.LENGTH_SHORT).show();
+                    } else {
+                        Toast.makeText(AddExpActivity.this, "تم خصم المصروف", Toast.LENGTH_SHORT).show();
+                    }
+                } catch (JSONException e) {
+                    e.printStackTrace();
+                }
+            }
+        }, new com.android.volley.Response.ErrorListener() {
+            @Override
+            public void onErrorResponse(VolleyError error) {
+                Toast.makeText(AddExpActivity.this, "حدث خطأ!", Toast.LENGTH_SHORT).show();
+            }
+        }) {
+            @Override
+            public String getBodyContentType() {
+                return "application/x-www-form-urlencoded; charset=UTF-8";
+            }
+
+            @Override
+            protected Map<String, String> getParams() {
+                Map<String, String> params = new HashMap<String, String>();
+
+                params.put("username", username);
+                params.put("table", "expenses");
+                params.put("accountname", accountname);
+                params.put("amount", String.valueOf(amount));
+                params.put("date", String.valueOf(LocalDate.now()));
+
+                return params;
+            }
+        };
+        queue.add(request);
     }
 
     private void fillSpinner(String username) {
@@ -91,18 +138,13 @@ public class AddExpActivity extends AppCompatActivity {
                     if (jsonObject.getString("error").equalsIgnoreCase("true")) {
                         Toast.makeText(AddExpActivity.this, "حدث خطأ!", Toast.LENGTH_SHORT).show();
                     } else {
-                        JSONArray array = jsonObject.getJSONArray(response);
                         ArrayList<String> options = new ArrayList<>();
-
-                        for (int i = 0; i < array.length(); i++) {
-                            String option = array.getString(i);//هان بجيب كل اسماء الاكاونتات تبعات المستخدم
+                        for (int i = 0; i < jsonObject.length() -1; i++) {
+                            String option = jsonObject.getString(String.valueOf(i));
                             options.add(option);
                         }
-                        ArrayAdapter<String> adapter = new ArrayAdapter<>(AddExpActivity.this, android.R.layout.simple_spinner_item, options);
-                        adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
+                        ArrayAdapter<String> adapter = new ArrayAdapter<String>(AddExpActivity.this, android.R.layout.simple_spinner_item, options);
                         accountsSpinner.setAdapter(adapter);
-
-
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
