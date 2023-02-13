@@ -30,12 +30,14 @@
 
             <TextView
                 style="@style/label_fields_style"
-                android:text="اسم الحساب" />
+                android:text="اختر الحساب" />
 
             <Spinner
-                android:id="@+id/AccountName"
-                style="@style/fields_style"
-                 />
+                android:id="@+id/AccountsSpinner"
+                android:layout_width="350dp"
+                android:layout_height="50dp"
+                android:backgroundTint="@color/white"
+                android:theme="@style/spinners_style" />
 
             <TextView
                 style="@style/label_fields_style"
@@ -44,10 +46,11 @@
             <EditText
                 android:id="@+id/ExpenseAmount"
                 style="@style/fields_style"
+                android:inputType="numberDecimal"
                 android:hint="Expense Amount" />
 
             <androidx.appcompat.widget.AppCompatButton
-                android:id="@+id/AmountDeductionButton"
+                android:id="@+id/AmountDeduction"
                 style="@style/buttons_login_style"
                 android:background="@drawable/btnsignup_background"
                 android:text="خصم المبلغ"

@@ -47,7 +47,7 @@
                 android:layout_height="50dp"
                 android:backgroundTint="@color/white"
                 android:entries="@array/account_type"
-                android:theme="@style/label_fields_style" />
+                android:theme="@style/spinners_style" />
 
             <androidx.appcompat.widget.AppCompatButton
                 android:id="@+id/btn_defineActivity"

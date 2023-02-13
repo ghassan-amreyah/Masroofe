@@ -7,9 +7,13 @@ import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.preference.PreferenceManager;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 
 public class AddActivity extends AppCompatActivity {
+
+    private Button defineBtn, expensesBtn, revenueBtn;
+
     private ImageView imgHomePage, imgUserGuide, imgSetting, imgMonthsRecord;
 
     private SharedPreferences prefs;
@@ -23,7 +27,40 @@ public class AddActivity extends AppCompatActivity {
         getSupportActionBar().hide();
         checkUserLogin();
         setupParActions();
+        setupReference();
+        Setup();
     }
+
+    private void Setup() {
+        defineBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddActivity.this, DefineActivity.class);
+                startActivity(intent);
+            }
+        });
+        expensesBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddActivity.this, AddExpActivity.class);
+                startActivity(intent);
+            }
+        });
+        revenueBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(AddActivity.this, AddRevActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void setupReference() {
+        defineBtn = findViewById(R.id.btnDefine);
+        expensesBtn = findViewById(R.id.btnExp);
+        revenueBtn = findViewById(R.id.btnRev);
+    }
+
 
     private void checkUserLogin() {
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
