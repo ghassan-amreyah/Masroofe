@@ -70,10 +70,10 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
     private void setupReference() {
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         editor = prefs.edit();
-        nameOfUser = findViewById(R.id.nameOfUser);
-        addIncomeBtn = findViewById(R.id.addIncomeBtn);
-        incomeAmount = findViewById(R.id.incomeAmount);
-        cashAmount = findViewById(R.id.cashAmount);
+        nameOfUser = findViewById(R.id.NameOfUser);
+        addIncomeBtn = findViewById(R.id.AddIncomeBtn);
+        incomeAmount = findViewById(R.id.IncomeAmount);
+        cashAmount = findViewById(R.id.CashAmount);
 
         nameOfUser.setText("مرحباً بك " + prefs.getString(FULLNAME, ""));
     }
@@ -82,15 +82,16 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
         addIncomeBtn.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                int amount = Integer.parseInt(incomeAmount.getText().toString());
-                int cash = Integer.parseInt(cashAmount.getText().toString());
-                if (amount < 1) {
+
+                String amount = incomeAmount.getText().toString();
+                String cash = cashAmount.getText().toString();
+                if (amount.equals("")) {
                     Toast.makeText(FixedIncomeInfoActivity.this, "اضف قيمة الراتب الثابت أولاً!", Toast.LENGTH_SHORT).show();
                 } else {
-                    if (cash > 0) {
-                        addIncome(amount, cash);
-                    } else {
+                    if (cash.equals("")) {
                         addIncome(amount, amount);
+                    } else {
+                        addIncome(amount, cash);
                     }
 
                 }
@@ -98,7 +99,7 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
         });
     }
 
-    private void addIncome(int amount, int cash) {
+    private void addIncome(String amount, String cash) {
         String url = "https://adam.s-matar.com/android-restAPI/addfixedincome.php";
         RequestQueue queue = Volley.newRequestQueue(FixedIncomeInfoActivity.this);
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
@@ -109,8 +110,8 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
                     if (jsonObject.getString("error").equalsIgnoreCase("true")) {
                         Toast.makeText(FixedIncomeInfoActivity.this, "حدث خطأ!", Toast.LENGTH_SHORT).show();
                     } else {
-                        editor.putString(FIXEDINCOME, String.valueOf(amount));
-                        editor.putString(CASH, String.valueOf(cash));
+                        editor.putString(FIXEDINCOME, amount);
+                        editor.putString(CASH, cash);
                         editor.commit();
                         Toast.makeText(FixedIncomeInfoActivity.this, "تم إضافة الراتب الثابت بنجاح!", Toast.LENGTH_SHORT).show();
                         Intent intent = new Intent(FixedIncomeInfoActivity.this, MainActivity.class);
@@ -136,9 +137,8 @@ public class FixedIncomeInfoActivity extends AppCompatActivity {
                 Map<String, String> params = new HashMap<String, String>();
 
                 params.put("username", prefs.getString(USERNAME, ""));
-                params.put("fixedincome", String.valueOf(amount));
-                params.put("cash", String.valueOf(cash));
-
+                params.put("fixedincome", amount);
+                params.put("cash", amount);
                 return params;
             }
         };

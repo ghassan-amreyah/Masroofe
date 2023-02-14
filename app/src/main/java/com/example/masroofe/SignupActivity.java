@@ -117,8 +117,8 @@ public class SignupActivity extends AppCompatActivity {
                 try {
                     JSONObject jsonObject = new JSONObject(response);
                     if (jsonObject.getString("error").equalsIgnoreCase("true")) {
-                        textError.setText("اسم المستخدم أو البريد الإلكتروني موجود من قبل!");
-                        Toast.makeText(SignupActivity.this, "اسم المستخدم أو البريد الإلكتروني متكرر!", Toast.LENGTH_SHORT).show();
+                        textError.setText("اسم المستخدم أو البريد الإلكتروني مُستخدم من قبل!");
+                        Toast.makeText(SignupActivity.this, "اسم المستخدم أو البريد الإلكتروني مُستخدم من قبل!", Toast.LENGTH_SHORT).show();
                     } else {
                         editor.putString(LOGIN, "true");
                         editor.putString(USERNAME, username);

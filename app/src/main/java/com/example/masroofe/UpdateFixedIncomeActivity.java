@@ -134,7 +134,7 @@ public class UpdateFixedIncomeActivity extends AppCompatActivity {
 
 
     private void addIncome(int amount){
-        String url = "https://adam.s-matar.com/android-restAPI/addfixedincome.php";
+        String url = "https://adam.s-matar.com/android-restAPI/updatefixedincome.php";
         RequestQueue queue = Volley.newRequestQueue(UpdateFixedIncomeActivity.this);
         StringRequest request = new StringRequest(Request.Method.POST, url, new com.android.volley.Response.Listener<String>() {
             @Override
