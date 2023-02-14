@@ -50,7 +50,7 @@
                 <ImageView
                     android:id="@+id/imageView2"
                     android:layout_width="match_parent"
-                    android:layout_height="320dp"
+                    android:layout_height="350dp"
                     android:layout_marginTop="40dp"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/main_blue"
@@ -60,27 +60,31 @@
                     android:id="@+id/imageView3"
                     android:layout_width="250dp"
                     android:layout_height="80dp"
+                    app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintTop_toTopOf="parent"
                     app:srcCompat="@drawable/main_drawable"
-                    tools:ignore="MissingConstraints"
-                    tools:layout_editor_absoluteX="120dp" />
+                    tools:ignore="MissingConstraints" />
 
                 <LinearLayout
                     android:id="@+id/linearLayout5"
                     android:layout_width="250dp"
                     android:layout_height="80dp"
-                    android:layout_margin="30dp"
-                    android:gravity="center"
+                    android:layout_marginEnd="20dp"
+                    android:gravity="right"
                     android:orientation="horizontal"
-                    tools:layout_editor_absoluteX="120dp"
+                    app:layout_constraintEnd_toEndOf="parent"
                     tools:ignore="MissingConstraints">
 
                     <TextView
                         android:id="@+id/fixedIncome"
                         android:layout_width="wrap_content"
-                        android:maxWidth="120dp"
                         android:layout_height="wrap_content"
                         android:fontFamily="monospace"
+                        android:layout_marginTop="12dp"
+                        android:maxWidth="120dp"
+                        android:gravity="left|center"
+                        android:layout_marginStart="10dp"
+                        android:text="00000"
                         android:textColor="@color/light_silver"
                         android:textSize="30sp" />
 
@@ -88,8 +92,8 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_gravity="right|center"
-                        android:text="الدخل الثابت"
                         android:layout_marginStart="10dp"
+                        android:text="الدخل الثابت"
                         android:textColor="@color/light_silver"
                         android:textSize="20sp"
                         android:textStyle="bold" />
@@ -99,11 +103,11 @@
                 <LinearLayout
                     android:id="@+id/linearLayout3"
                     android:layout_width="match_parent"
-                    android:paddingLeft="60dp"
                     android:layout_height="320dp"
                     android:layout_marginTop="70dp"
-                    app:layout_constraintTop_toTopOf="parent"
                     android:orientation="vertical"
+                    android:paddingLeft="60dp"
+                    app:layout_constraintTop_toTopOf="parent"
                     tools:ignore="MissingConstraints">
 
                     <LinearLayout
@@ -116,13 +120,13 @@
                         <TextView
                             android:id="@+id/cash"
                             android:layout_width="wrap_content"
-                            android:maxWidth="120dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left|center"
                             android:layout_marginTop="16dp"
                             android:layout_marginEnd="80dp"
                             android:layout_marginBottom="16dp"
                             android:fontFamily="monospace"
+                            android:maxWidth="120dp"
                             android:textColor="@color/head_filed_color"
                             android:textSize="30sp" />
 
@@ -148,12 +152,12 @@
                         <TextView
                             android:id="@+id/sumRev"
                             android:layout_width="wrap_content"
-                            android:maxWidth="120dp"
                             android:layout_height="wrap_content"
                             android:layout_gravity="left|center"
                             android:layout_marginTop="16dp"
                             android:layout_marginBottom="16dp"
                             android:fontFamily="monospace"
+                            android:maxWidth="120dp"
                             android:textColor="@color/head_filed_color"
                             android:textSize="30sp" />
 
@@ -179,11 +183,12 @@
                         <TextView
                             android:id="@+id/sumExp"
                             android:layout_width="wrap_content"
-                            android:maxWidth="120dp"                            android:layout_height="wrap_content"
+                            android:layout_height="wrap_content"
                             android:layout_gravity="left|center"
                             android:layout_marginTop="16dp"
                             android:layout_marginBottom="16dp"
                             android:fontFamily="monospace"
+                            android:maxWidth="120dp"
                             android:textColor="@color/head_filed_color"
                             android:textSize="30sp" />
 
