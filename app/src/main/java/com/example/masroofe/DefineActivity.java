@@ -52,9 +52,11 @@ public class DefineActivity extends AppCompatActivity {
         if (name.trim().length()>0){
             if(type.equals("مصروف")){
                 AddAccount(name,"expenses",prefs.getString(USERNAME,""));
+                accountName.setText("");
             }
             else if (type.equals("إيراد / دخل")){
                 AddAccount(name,"revenues",prefs.getString(USERNAME,""));
+                accountName.setText("");
             }
         }else{
             Toast.makeText(this, "أدخل اسم الحساب", Toast.LENGTH_SHORT).show();

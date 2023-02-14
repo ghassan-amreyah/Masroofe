@@ -70,6 +70,7 @@ public class AddRevActivity extends AppCompatActivity {
                     String accountname = accountsSpinner.getSelectedItem().toString();
                     if (amount > 0) {
                         AddRecord(prefs.getString(USERNAME, ""), accountname, amount);
+                        IncomeAmount.setText("");
                     } else {
                         Toast.makeText(AddRevActivity.this, "اضف قيمة صحيحة!", Toast.LENGTH_SHORT).show();
                     }
