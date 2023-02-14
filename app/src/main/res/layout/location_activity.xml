@@ -18,7 +18,7 @@
         <TextView
             android:id="@+id/settingsText"
             android:layout_width="match_parent"
-            android:layout_height="120dp"
+            android:layout_height="150dp"
             android:background="@drawable/top_background"
             android:paddingTop="45dp"
             android:paddingEnd="30dp"
@@ -49,7 +49,7 @@
             android:layout_height="wrap_content"
             android:onClick="gpsSwitch_onclick"
             android:layout_marginEnd="20dp"
-            android:checked="true"
+            android:checked="false"
             android:text="@string/gpsSavePower"
             android:textSize="20sp"
             android:textColor="@color/vista_blue"
@@ -81,14 +81,14 @@
                 android:textDirection="ltr" />
 
             <TextView
-                android:layout_width="80dp"
+                android:layout_width="90dp"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginStart="140dp"
+                android:layout_marginStart="110dp"
                 android:text="خط العرض:"
                 android:textColor="@color/vista_blue"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -117,10 +117,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginStart="140dp"
+                android:layout_marginStart="120dp"
                 android:text="خط الطول"
                 android:textColor="@color/vista_blue"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -149,10 +149,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginStart="140dp"
+                android:layout_marginStart="120dp"
                 android:text="الإرتفاع:"
                 android:textColor="@color/vista_blue"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -179,12 +179,12 @@
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="140dp"
+                android:layout_marginStart="120dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:text="الدقة"
                 android:textColor="@color/vista_blue"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -213,10 +213,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginStart="120dp"
+                android:layout_marginStart="100dp"
                 android:text="الحساس:"
                 android:textColor="@color/vista_blue"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -243,12 +243,12 @@
             <TextView
                 android:layout_width="80dp"
                 android:layout_height="wrap_content"
-                android:layout_marginStart="140dp"
+                android:layout_marginStart="120dp"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
                 android:text="التحديثات"
                 android:textColor="@color/vista_blue"
-                android:textSize="18sp" />
+                android:textSize="16sp" />
         </LinearLayout>
 
         <LinearLayout
@@ -277,10 +277,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:layout_marginStart="140dp"
+                android:layout_marginStart="120dp"
                 android:text="العنوان:"
                 android:textColor="@color/vista_blue"
-                android:textSize="18sp"
+                android:textSize="16sp"
                 android:textDirection="rtl"/>
         </LinearLayout>
     </LinearLayout>
