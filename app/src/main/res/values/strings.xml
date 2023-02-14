@@ -54,6 +54,7 @@
     <string name="UpdateFixedIncome">تحديث قيمة الدخل الشهري الثابت</string>
     <string name="Update">تحديث</string>
     <string name="cash">Cash Available</string>
+    <string name="AccountType">نوع الحساب</string>
 
     <string-array name="type_incomes">
         <item>يومي</item>

@@ -39,7 +39,7 @@
 
             <TextView
                 style="@style/label_fields_style"
-                android:text="نوع الحساب" />
+                android:text="@string/AccountType" />
 
             <Spinner
                 android:id="@+id/AccountType"
