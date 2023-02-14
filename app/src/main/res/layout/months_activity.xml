@@ -17,10 +17,11 @@
             style="@style/label_fields_style"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
+            android:layout_marginTop="100dp"
+            android:layout_marginBottom="30dp"
             android:gravity="center"
             android:text="@string/ChooseMonthAndYear"
-            android:textSize="24sp" />
+            android:textSize="22sp" />
 
         <androidx.constraintlayout.widget.ConstraintLayout
             android:layout_width="220dp"
@@ -103,6 +104,8 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginTop="15dp"
+            android:layout_marginStart="10dp"
+            android:layout_marginEnd="10dp"
             android:gravity="center"
             android:textColor="@color/jacarta"
             android:textSize="28sp" />
