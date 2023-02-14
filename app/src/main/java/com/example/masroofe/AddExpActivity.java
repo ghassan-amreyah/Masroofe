@@ -21,12 +21,10 @@ import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
-import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.time.LocalDate;
-import java.time.LocalTime;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
@@ -71,7 +69,7 @@ public class AddExpActivity extends AppCompatActivity {
                     double amount = Double.parseDouble(expenseAmount.getText().toString());
                     String accountname = accountsSpinner.getSelectedItem().toString();
                     if (amount > 0) {
-                        AddRecord(prefs.getString(USERNAME,""),accountname,amount);
+                        AddRecord(prefs.getString(USERNAME, ""), accountname, amount);
                     } else {
                         Toast.makeText(AddExpActivity.this, "اضف قيمة صحيحة!", Toast.LENGTH_SHORT).show();
                     }
@@ -139,7 +137,7 @@ public class AddExpActivity extends AppCompatActivity {
                         Toast.makeText(AddExpActivity.this, "حدث خطأ!", Toast.LENGTH_SHORT).show();
                     } else {
                         ArrayList<String> options = new ArrayList<>();
-                        for (int i = 0; i < jsonObject.length() -1; i++) {
+                        for (int i = 0; i < jsonObject.length() - 1; i++) {
                             String option = jsonObject.getString(String.valueOf(i));
                             options.add(option);
                         }

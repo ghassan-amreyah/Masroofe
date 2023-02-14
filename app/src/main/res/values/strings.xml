@@ -43,8 +43,8 @@
     <string name="ChooseMonthAndYear">اختر السنة والشهر لإظهار المصاريف</string>
     <string name="search">بحث</string>
     <string name="quotation">تذكر، المالُ رَئيسٌ سَيِّء، لكِنَّهُ خادِمٌ مُمتاز...</string>
-    <string name="income_during_the_month">كامل الدخل خلال الشهر</string>
-    <string name="remainder_of_the_income">المتبقي من الدخل</string>
+    <string name="income_during_the_month"> كامل الدخل </string>
+    <string name="remainder_of_the_income">كامل المصروف</string>
     <string name="your_extra_income">مجموع دخلك الإضافي</string>
     <string name="monthly_expenses">مجموع مصاريفك\n لهذا الشهر</string>
     <string name="last_month_expenses">مجموع مدخرات الشهر الماضي</string>
@@ -59,6 +59,7 @@
     <string name="switchUpadteText">تحديثات الموقع</string>
     <string name="gps_savepower">GPS/Save Power</string>
     <string name="gpsSavePower">GPS/SavePower</string>
+    <string name="AccountType">نوع الحساب</string>
 
     <string-array name="type_incomes">
         <item>يومي</item>
@@ -70,12 +71,8 @@
         <item>إيراد / دخل</item>
     </string-array>
     <string-array name="years">
-        <item>2020</item>
-        <item>2021</item>
         <item>2022</item>
         <item>2023</item>
-        <item>2024</item>
-        <item>2025</item>
     </string-array>
     <string-array name="months">
         <item>1</item>

@@ -35,7 +35,7 @@
                 tools:ignore="MissingConstraints" />
 
             <Spinner
-                android:id="@+id/year"
+                android:id="@+id/Year"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_marginEnd="80dp"
@@ -58,12 +58,34 @@
                 tools:ignore="MissingConstraints" />
 
             <Spinner
-                android:id="@+id/month"
+                android:id="@+id/Month"
                 android:layout_width="match_parent"
                 android:layout_height="35dp"
                 android:layout_marginEnd="80dp"
                 android:backgroundTint="@color/white"
                 android:entries="@array/months"
+                android:theme="@style/spinners_style"
+                tools:ignore="MissingConstraints" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="350dp"
+            android:layout_height="match_parent"
+            android:layout_gravity="right"
+            android:layout_marginTop="20dp">
+
+            <TextView
+                style="@style/label_fields_style"
+                android:text="@string/AccountType"
+                android:textSize="25sp"
+                tools:ignore="MissingConstraints" />
+            <Spinner
+                android:id="@+id/AccountType"
+                android:layout_width="match_parent"
+                android:layout_height="35dp"
+                android:layout_marginEnd="135dp"
+                android:backgroundTint="@color/white"
+                android:entries="@array/account_type"
                 android:theme="@style/spinners_style"
                 tools:ignore="MissingConstraints" />
         </androidx.constraintlayout.widget.ConstraintLayout>
@@ -77,13 +99,21 @@
             android:textSize="25sp" />
 
         <TextView
-            android:id="@+id/selectResult"
+            android:id="@+id/record_result"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="15dp"
+            android:layout_marginTop="15dp"
             android:gravity="center"
             android:textColor="@color/jacarta"
             android:textSize="28sp" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/record_recycler"
+            android:layout_marginTop="5dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:scrollbars="vertical"/>
+
     </LinearLayout>
 
     <androidx.coordinatorlayout.widget.CoordinatorLayout

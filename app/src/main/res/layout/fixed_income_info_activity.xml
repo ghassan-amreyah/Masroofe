@@ -17,7 +17,7 @@
         tools:ignore="MissingConstraints">
 
         <TextView
-            android:id="@+id/nameOfUser"
+            android:id="@+id/NameOfUser"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:layout_marginEnd="15dp"
@@ -51,7 +51,7 @@
             android:textColor="@color/white" />
 
         <EditText
-            android:id="@+id/incomeAmount"
+            android:id="@+id/IncomeAmount"
             style="@style/fields_style"
             android:hint="@string/amount_of_income"
             android:inputType="number"
@@ -65,7 +65,7 @@
             android:textColor="@color/white" />
 
         <EditText
-            android:id="@+id/cashAmount"
+            android:id="@+id/CashAmount"
             style="@style/fields_style"
             android:hint="@string/cash"
             android:inputType="number"
@@ -82,7 +82,7 @@
             android:textDirection="firstStrong" />
 
         <androidx.appcompat.widget.AppCompatButton
-            android:id="@+id/addIncomeBtn"
+            android:id="@+id/AddIncomeBtn"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center"
