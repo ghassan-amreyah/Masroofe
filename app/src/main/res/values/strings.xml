@@ -43,8 +43,8 @@
     <string name="ChooseMonthAndYear">اختر السنة والشهر لإظهار المصاريف</string>
     <string name="search">بحث</string>
     <string name="quotation">تذكر، المالُ رَئيسٌ سَيِّء، لكِنَّهُ خادِمٌ مُمتاز...</string>
-    <string name="income_during_the_month">كامل الدخل خلال الشهر</string>
-    <string name="remainder_of_the_income">المتبقي من الدخل</string>
+    <string name="income_during_the_month"> كامل الدخل </string>
+    <string name="remainder_of_the_income">كامل المصروف</string>
     <string name="your_extra_income">مجموع دخلك الإضافي</string>
     <string name="monthly_expenses">مجموع مصاريفك\n لهذا الشهر</string>
     <string name="last_month_expenses">مجموع مدخرات الشهر الماضي</string>
