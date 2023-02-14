@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/jacarta"
+    android:orientation="vertical"
+    android:textDirection="rtl"
+    tools:context=".LocationActivity">
+
+    <TextView
+        android:id="@+id/settingsText"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:background="@drawable/top_background"
+        android:paddingTop="45dp"
+        android:paddingEnd="30dp"
+        android:text="@string/mainTitleLocation"
+        android:textColor="@color/jacarta"
+        android:textSize="30sp"
+        android:textStyle="bold" />
+
+    <Switch
+        android:id="@+id/switchLocationsUpdates"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="updateLocationSwitch_onclick"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:checked="true"
+        android:text="@string/switchUpadteText"
+        android:textSize="20sp"
+        android:textColor="@color/vista_blue"
+        android:textDirection="rtl"
+        android:paddingTop="50dp"
+        android:layout_gravity="right"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+    <Switch
+        android:id="@+id/switchGPS"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="gpsSwitch_onclick"
+        android:layout_marginEnd="20dp"
+        android:checked="true"
+        android:text="@string/gpsSavePower"
+        android:textSize="20sp"
+        android:textColor="@color/vista_blue"
+        android:textDirection="rtl"
+        android:paddingTop="50dp"
+        android:layout_gravity="right"
+        tools:ignore="UseSwitchCompatOrMaterialXml" />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textDirection="rtl"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_lat"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:paddingEnd="15dp"
+            android:text="0.00"
+            android:textColor="@color/vista_blue"
+            android:textDirection="ltr" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="140dp"
+            android:text="خط العرض:"
+            android:textColor="@color/vista_blue"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textDirection="rtl"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="10dp"
+        android:layout_marginEnd="20dp"
+        android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_lon"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:paddingEnd="15dp"
+            android:text="0.00"
+            android:textColor="@color/vista_blue"
+            android:textDirection="ltr" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:layout_marginStart="140dp"
+            android:text="خط الطول"
+            android:textColor="@color/vista_blue"
+            android:textSize="18sp" />
+    </LinearLayout>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textDirection="rtl"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="20dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_altitude"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:paddingEnd="15dp"
+        android:text="0.00"
+        android:textColor="@color/vista_blue"
+        android:textDirection="ltr" />
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="140dp"
+        android:text="الإرتفاع:"
+        android:textColor="@color/vista_blue"
+        android:textSize="18sp" />
+</LinearLayout>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textDirection="rtl"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="20dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_accuracy"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:paddingEnd="15dp"
+        android:text="0.00"
+        android:textColor="@color/vista_blue"
+        android:textDirection="ltr" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="الدقة"
+            android:textColor="@color/vista_blue"
+            android:textSize="18sp" />
+</LinearLayout>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textDirection="rtl"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="20dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_sensor"
+        android:layout_width="120dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:paddingEnd="15dp"
+        android:text="Cell Tower + Wifi"
+        android:textColor="@color/vista_blue"
+        android:textDirection="ltr" />
+
+    <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="120dp"
+        android:text="الحساس:"
+        android:textColor="@color/vista_blue"
+        android:textSize="18sp" />
+</LinearLayout>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textDirection="rtl"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="20dp"
+    android:orientation="horizontal">
+
+    <TextView
+        android:id="@+id/tv_updates"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="20dp"
+        android:paddingEnd="15dp"
+        android:text="0.00"
+        android:textColor="@color/vista_blue"
+        android:textDirection="ltr" />
+
+        <TextView
+            android:layout_width="80dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="140dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginBottom="5dp"
+            android:text="التحديثات"
+            android:textColor="@color/vista_blue"
+            android:textSize="18sp" />
+</LinearLayout>
+
+    <LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:textDirection="rtl"
+    android:layout_marginStart="20dp"
+    android:layout_marginTop="10dp"
+    android:layout_marginEnd="20dp"
+    android:orientation="horizontal">
+
+        <TextView
+            android:id="@+id/tv_address"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="20dp"
+            android:paddingEnd="15dp"
+            android:text="غير متوفر"
+            android:textColor="@color/vista_blue"
+            android:textDirection="ltr" />
+
+        <TextView
+        android:layout_width="80dp"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginStart="140dp"
+        android:text="العنوان:"
+        android:textColor="@color/vista_blue"
+        android:textSize="18sp"
+        android:textDirection="rtl"/>
+</LinearLayout>
+
+</LinearLayout>

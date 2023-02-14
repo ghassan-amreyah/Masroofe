@@ -13,7 +13,7 @@ import android.widget.ImageView;
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 public class SettingsActivity extends AppCompatActivity {
-    private Button updateUserInformationBtn, updateUserPasswordBtn, fixedIncome, logout;
+    private Button updateUserInformationBtn, updateUserPasswordBtn, fixedIncome, logout, locationBtn;
     private ImageView imgHomePage, imgMonthsRecord, imgUserGuide;
     private FloatingActionButton ParAddButton;
 
@@ -27,19 +27,47 @@ public class SettingsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.settings_activity);
         getSupportActionBar().hide();
+
+        //References
         setupReference();
         checkUserLogin();
         setUp();
         setupParActions();
+        viewLocationClick();
+    }
+
+    //--------References------------------------------------------------------------------
+    private void setupReference()
+    {
+        updateUserInformationBtn = findViewById(R.id.updateUserInformation);
+        updateUserPasswordBtn = findViewById(R.id.updateUserPassword);
+        fixedIncome = findViewById(R.id.fixedIncome);
+        logout = findViewById(R.id.logout);
+        locationBtn = findViewById(R.id.viewLocationBtn);
     }
 
     @Override
-    protected void onRestart() {
+    protected void onRestart()
+    {
         super.onRestart();
         checkUserLogin();
     }
 
-    private void checkUserLogin() {
+    private void viewLocationClick()
+    {
+        locationBtn.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view)
+            {
+                Intent intent = new Intent(SettingsActivity.this, LocationActivity.class);
+                startActivity(intent);
+
+            }
+        });
+    }
+
+    private void checkUserLogin()
+    {
         prefs = PreferenceManager.getDefaultSharedPreferences(this);
         editor = prefs.edit();
 
@@ -50,7 +78,8 @@ public class SettingsActivity extends AppCompatActivity {
         }
     }
 
-    private void setupParActions() {
+    private void setupParActions()
+    {
         imgHomePage = findViewById(R.id.imgHomePage);
         imgMonthsRecord = findViewById(R.id.imgMonthsRecord);
         imgUserGuide = findViewById(R.id.imgUserGuide);
@@ -125,10 +154,5 @@ public class SettingsActivity extends AppCompatActivity {
         });
     }
 
-    private void setupReference() {
-        updateUserInformationBtn = findViewById(R.id.updateUserInformation);
-        updateUserPasswordBtn = findViewById(R.id.updateUserPassword);
-        fixedIncome = findViewById(R.id.fixedIncome);
-        logout = findViewById(R.id.logout);
-    }
+
 }
