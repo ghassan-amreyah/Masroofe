@@ -47,7 +47,7 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupReference() {
         FixedIncome = findViewById(R.id.fixedIncome);
-        Cash = findViewById(R.id.cash);
+//        Cash = findViewById(R.id.cash);
         FixedIncome.setText(prefs.getString(FIXEDINCOME,"0"));
         Cash.setText(prefs.getString(CASH,"0"));
     }
