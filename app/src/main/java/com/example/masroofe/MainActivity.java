@@ -61,9 +61,9 @@ public class MainActivity extends AppCompatActivity {
 
     private void setupReference() {
         FixedIncome = findViewById(R.id.fixedIncome);
-        Cash = findViewById(R.id.cash);
         SumRev = findViewById(R.id.sumRev);
         SumExp = findViewById(R.id.sumExp);
+//        Cash = findViewById(R.id.cash);
         FixedIncome.setText(prefs.getString(FIXEDINCOME,"0"));
         Cash.setText(prefs.getString(CASH,"0"));
         countExpensesAndRevenuesAndCash(prefs.getString(USERNAME,""));
