@@ -47,20 +47,14 @@ public class LocationActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.location_activity);
-        setupReferences();
         getSupportActionBar().hide();
-        setupParActions();
 
-        //this event is triggered whenever the update interval in met
-        locationCallback = new LocationCallback() {
-
-            @Override
-            public void onLocationResult(LocationResult locationResult) {
-                super.onLocationResult(locationResult);
-                updateUI(locationResult.getLastLocation());
-            }
-        };
+        setupReferences();
         updateGPS();
+        setupParActions();
+        setUpswitchUpdate();
+
+
     }
 
     private void setupParActions() {
@@ -110,7 +104,16 @@ public class LocationActivity extends AppCompatActivity {
         });
     }
 
-    private void setupReferences() {
+    private void setupReferences()
+    {
+        locationCallback = new LocationCallback()
+        {
+            @Override
+            public void onLocationResult(LocationResult locationResult) {
+                super.onLocationResult(locationResult);
+                updateUI(locationResult.getLastLocation());
+            }
+        };
         tv_lat = findViewById(R.id.tv_lat);
         tv_lon = findViewById(R.id.tv_lon);
         tv_altitude = findViewById(R.id.tv_altitude);
@@ -146,7 +149,7 @@ public class LocationActivity extends AppCompatActivity {
             if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
                 updateGPS();
             } else {
-                Toast.makeText(this, "this app requires permissions to work properly", Toast.LENGTH_SHORT).show();
+                Toast.makeText(this, "This app requires permissions to work properly", Toast.LENGTH_SHORT).show();
                 finish();
             }
         }
@@ -178,38 +181,52 @@ public class LocationActivity extends AppCompatActivity {
                     Toast.LENGTH_SHORT).show();
             return;
         }
-        tv_lat.setText(String.valueOf(location.getLatitude()));
-        tv_lon.setText(String.valueOf(location.getLongitude()));
-        tv_accuracy.setText(String.valueOf(location.getAccuracy()));
+        else {
 
-        if (location.hasAltitude()) {
-            tv_altitude.setText(String.valueOf(location.getAltitude()));
-        } else {
-            tv_altitude.setText("not available");
-        }
+            tv_lat.setText(String.valueOf(location.getLatitude()));
+            tv_lon.setText(String.valueOf(location.getLongitude()));
+            tv_accuracy.setText(String.valueOf(location.getAccuracy()));
 
-        if (location.hasSpeed()) {
-            tv_speed.setText(String.valueOf(location.getSpeed()));
-        } else {
-            tv_speed.setText("not available");
-        }
-        Geocoder geocoder = new Geocoder(this);
-        try {
-            List<Address> address = geocoder.getFromLocation(location.getLatitude(),
-                    location.getLongitude(), 1);
-            tv_address.setText(address.get(0).getAddressLine(0));
-        } catch (Exception e) {
-            tv_address.setText("Cannot get Street Address!");
+            if (location.hasAltitude()) {
+                tv_altitude.setText(String.valueOf(location.getAltitude()));
+            } else {
+                tv_altitude.setText("غير متاح");
+            }
+
+            Geocoder geocoder = new Geocoder(this);
+            try {
+                List<Address> address = geocoder.getFromLocation(location.getLatitude(),
+                        location.getLongitude(), 1);
+                tv_address.setText(address.get(0).getAddressLine(0));
+            } catch (Exception e) {
+                tv_address.setText("لا يمكن الحصول على العنوان!");
+            }
+
+
         }
 
     }
 
-    public void sw_updates_onclick(View view) {
-        if (sw_locationupdates.isChecked()) {
-            startLocationUpdates();
-        } else {
-            stopLocationUpdates();
-        }
+
+    private void setUpswitchUpdate()
+    {
+
+        sw_locationupdates.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v)
+            {
+                if (sw_locationupdates.isChecked())
+                {
+                    startLocationUpdates();
+                } else
+                {
+                    stopLocationUpdates();
+                }
+
+            }
+        });
+
+
     }
 
     private void startLocationUpdates() {

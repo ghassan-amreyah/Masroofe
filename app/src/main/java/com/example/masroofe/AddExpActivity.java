@@ -70,6 +70,7 @@ public class AddExpActivity extends AppCompatActivity {
                     String accountname = accountsSpinner.getSelectedItem().toString();
                     if (amount > 0) {
                         AddRecord(prefs.getString(USERNAME, ""), accountname, amount);
+                        expenseAmount.setText("");
                     } else {
                         Toast.makeText(AddExpActivity.this, "اضف قيمة صحيحة!", Toast.LENGTH_SHORT).show();
                     }

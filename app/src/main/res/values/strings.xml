@@ -54,8 +54,8 @@
     <string name="UpdateFixedIncome">تحديث قيمة الدخل الشهري الثابت</string>
     <string name="Update">تحديث</string>
     <string name="cash">Cash Available</string>
-    <string name="myLocation">عرض موقعي</string>
-    <string name="mainTitleLocation">موقعي</string>
+    <string name="myLocation">عرض تفاصيل موقعي</string>
+    <string name="mainTitleLocation">تفاصيل موقعي</string>
     <string name="switchUpadteText">تحديثات الموقع</string>
     <string name="gps_savepower">GPS/Save Power</string>
     <string name="gpsSavePower">GPS/SavePower</string>

@@ -88,12 +88,11 @@ public class MonthsActivity extends AppCompatActivity {
                     if (jsonObject.getString("error").equalsIgnoreCase("true")) {
                         Toast.makeText(MonthsActivity.this, "حدث خطأ!", Toast.LENGTH_SHORT).show();
                     } else {
+                        recordResult.setText(table.toString());
                         JSONArray array = new JSONArray(response);
                         for (int i = 0; i<array.length(); i++){
 
                             JSONObject object = array.getJSONObject(i);
-
-
                             String accountname = object.getString("accountname");
                             String amount = object.getString("amount");
                             String date = object.getString("date");
@@ -123,7 +122,12 @@ public class MonthsActivity extends AppCompatActivity {
 
                 params.put("username", username);
                 params.put("year", year);
-                params.put("month", month);
+                int m = Integer.parseInt(month);
+                if (m<10){
+                    params.put("month", "0"+month);
+                }else {
+                    params.put("month", month);
+                }
                 params.put("table", table);
                 return params;
             }
