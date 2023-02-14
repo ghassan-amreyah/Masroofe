@@ -63,7 +63,7 @@ public class MainActivity extends AppCompatActivity {
         FixedIncome = findViewById(R.id.fixedIncome);
         SumRev = findViewById(R.id.sumRev);
         SumExp = findViewById(R.id.sumExp);
-//        Cash = findViewById(R.id.cash);
+        Cash = findViewById(R.id.cash);
         FixedIncome.setText(prefs.getString(FIXEDINCOME,"0"));
         Cash.setText(prefs.getString(CASH,"0"));
         countExpensesAndRevenuesAndCash(prefs.getString(USERNAME,""));
