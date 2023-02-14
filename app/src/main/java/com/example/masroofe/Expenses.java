@@ -3,12 +3,10 @@ package com.example.masroofe;
 public class Expenses {
     private String account_name;
     private double total_amount;
-    private double monthly_amount;
 
-    public Expenses(String account_name, double total_amount, double monthly_amount) {
+    public Expenses(String account_name, double total_amount) {
         this.account_name = account_name;
         this.total_amount = total_amount;
-        this.monthly_amount = monthly_amount;
     }
 
     public String getAccount_name() {
@@ -27,35 +25,31 @@ public class Expenses {
         this.total_amount = total_amount;
     }
 
-    public double getMonthly_amount() {
-        return monthly_amount;
-    }
-
-    public void setMonthly_amount(double monthly_amount) {
-        this.monthly_amount = monthly_amount;
-    }
-
     // Debit Expenses
-    public void add_expense (double amount) {
-        Cash cash = new Cash();
-        double available = cash.getMonthly_amount();
+    public double add_expense (double amount) {
+        double available = 1000;
         if(amount <= available) {
             total_amount += amount;
-            monthly_amount += amount;
+
+            Cash cash = new Cash();
 
             double new_monthly_cash = cash.getMonthly_amount() - amount;
             cash.setMonthly_amount(new_monthly_cash);
 
             double new_cash = cash.getTotal_amount() - amount;
             cash.setTotal_amount(new_cash);
+            return total_amount;
+        }
+        else{
+            return 0;
         }
     }
 
     // Credit Expenses
-    public void inverse_expense (double amount) {
+    public double inverse_expense (double amount) {
 
+        if(amount <= total_amount) {
             total_amount -= amount;
-            monthly_amount -= amount;
 
             Cash cash = new Cash();
             double new_monthly_cash = cash.getMonthly_amount() - amount;
@@ -63,5 +57,10 @@ public class Expenses {
 
             double new_cash = cash.getTotal_amount() - amount;
             cash.setTotal_amount(new_cash);
+
+            return total_amount;
+        }else{
+            return 0;
+        }
     }
 }

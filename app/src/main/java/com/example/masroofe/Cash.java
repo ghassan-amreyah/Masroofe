@@ -4,6 +4,10 @@ public class Cash {
     private double total_amount = 0;
     private double monthly_amount = 0;
 
+    public Cash(double total_amount) {
+        this.total_amount = total_amount;
+    }
+
     public Cash() {
         this.total_amount = total_amount;
         this.monthly_amount = monthly_amount;
