@@ -1,6 +1,7 @@
 package com.example.masroofe;
 
 import android.Manifest;
+import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.location.Address;
 import android.location.Geocoder;
@@ -9,6 +10,7 @@ import android.os.Build;
 import android.os.Bundle;
 
 import android.view.View;
+import android.widget.ImageView;
 import android.widget.Switch;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -23,6 +25,7 @@ import com.google.android.gms.location.LocationRequest;
 import com.google.android.gms.location.LocationResult;
 import com.google.android.gms.location.LocationServices;
 import com.google.android.gms.tasks.OnSuccessListener;
+import com.google.android.material.floatingactionbutton.FloatingActionButton;
 
 import java.util.List;
 
@@ -36,11 +39,17 @@ public class LocationActivity extends AppCompatActivity {
     // this is configuration class that tells FusedLocationProviderClient how to work
     LocationRequest locationRequest;
 
+    private ImageView imgHomePage, imgMonthsRecord, imgUserGuide, imgSetting;
+    private FloatingActionButton ParAddButton;
+
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_main);
+        setContentView(R.layout.location_activity);
         setupReferences();
+        getSupportActionBar().hide();
+        setupParActions();
 
         //this event is triggered whenever the update interval in met
         locationCallback = new LocationCallback() {
@@ -54,8 +63,54 @@ public class LocationActivity extends AppCompatActivity {
         updateGPS();
     }
 
-    private void setupReferences()
-    {
+    private void setupParActions() {
+        imgHomePage = findViewById(R.id.imgHomePage);
+        imgMonthsRecord = findViewById(R.id.imgMonthsRecord);
+        imgUserGuide = findViewById(R.id.imgUserGuide);
+        imgSetting = findViewById(R.id.imgSetting);
+        ParAddButton = findViewById(R.id.ParAddButton);
+
+        imgHomePage.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LocationActivity.this, MainActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        imgMonthsRecord.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LocationActivity.this, MonthsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        imgUserGuide.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                return;
+            }
+        });
+
+        imgSetting.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LocationActivity.this, SettingsActivity.class);
+                startActivity(intent);
+            }
+        });
+
+        ParAddButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(LocationActivity.this, AddActivity.class);
+                startActivity(intent);
+            }
+        });
+    }
+
+    private void setupReferences() {
         tv_lat = findViewById(R.id.tv_lat);
         tv_lon = findViewById(R.id.tv_lon);
         tv_altitude = findViewById(R.id.tv_altitude);
@@ -72,15 +127,11 @@ public class LocationActivity extends AppCompatActivity {
     }
 
 
-    public void gpsSwitch_onclick(View view)
-    {
-        if(sw_GPS.isChecked())
-        {
+    public void gpsSwitch_onclick(View view) {
+        if (sw_GPS.isChecked()) {
             locationRequest.setPriority(LocationRequest.PRIORITY_HIGH_ACCURACY);
             tv_sensor.setText("Using GPS");
-        }
-        else
-        {
+        } else {
             locationRequest.setPriority(LocationRequest.PRIORITY_BALANCED_POWER_ACCURACY);
             tv_sensor.setText("Using WiFI and Towers");
         }
@@ -176,8 +227,8 @@ public class LocationActivity extends AppCompatActivity {
         fusedLocationProviderClient.requestLocationUpdates(locationRequest, locationCallback, null);
         updateGPS();
     }
-    private void stopLocationUpdates()
-    {
+
+    private void stopLocationUpdates() {
         tv_updates.setText("Location is NOT being tracked!");
         tv_lat.setText("Not Tracking Location");
         tv_lon.setText("Not Tracking Location");
