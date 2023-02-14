@@ -88,18 +88,16 @@ public class MonthsActivity extends AppCompatActivity {
                     if (jsonObject.getString("error").equalsIgnoreCase("true")) {
                         Toast.makeText(MonthsActivity.this, "حدث خطأ!", Toast.LENGTH_SHORT).show();
                     } else {
-                        recordResult.setText(table.toString());
-                        JSONArray array = new JSONArray(response);
-                        for (int i = 0; i<array.length(); i++){
-
-                            JSONObject object = array.getJSONObject(i);
+                        recordResult.setText(table);
+                        for (int i = 0; i<jsonObject.length()-1; i++){
+                            JSONObject object = new JSONObject(jsonObject.getString(String.valueOf(i)));
                             String accountname = object.getString("accountname");
                             String amount = object.getString("amount");
                             String date = object.getString("date");
                             Record record = new Record(accountname, amount,date);
                             items.add(record);
                         }
-                        Toast.makeText(MonthsActivity.this, "تم إنهاء بنجاح", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(MonthsActivity.this, "تم الإنهاء بنجاح", Toast.LENGTH_SHORT).show();
                     }
                 } catch (JSONException e) {
                     e.printStackTrace();
@@ -137,11 +135,11 @@ public class MonthsActivity extends AppCompatActivity {
 
     private void setupReference() {
         recordResult = findViewById(R.id.record_result);
-        recycler = findViewById(R.id.record_recycler);
         search = findViewById(R.id.btnSelectMonthYear);
         year = findViewById(R.id.Year);
         month = findViewById(R.id.Month);
         accountType = findViewById(R.id.AccountType);
+        recycler = findViewById(R.id.record_recycler);
         recycler.setLayoutManager(new LinearLayoutManager(this));
     }
 
